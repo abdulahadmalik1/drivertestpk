@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useLang } from './_app';
-import { MenuCard } from '../lib/constants';
+import { MenuCard, DRIVING_TRACKS } from '../lib/constants';
 
 import { useEffect } from 'react';
 
@@ -16,6 +16,20 @@ export default function Home() {
     router.prefetch('/learn');
     router.prefetch('/tracks');
     router.prefetch('/links');
+
+    // Aggressive background caching for track images so they open instantly
+    if (typeof window !== 'undefined') {
+      setTimeout(() => {
+        DRIVING_TRACKS.forEach(track => {
+          const thumb = new Image();
+          thumb.src = track.thumbnail;
+          track.images.forEach(imgUrl => {
+            const fullImg = new Image();
+            fullImg.src = imgUrl;
+          });
+        });
+      }, 500); // 500ms delay to not block initial splash screen render
+    }
   }, [router]);
 
   return (
