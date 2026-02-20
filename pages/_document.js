@@ -88,6 +88,7 @@ export default function Document() {
         <meta name="keywords" content="Pakistan driving license test, driving test Pakistan, traffic signs Pakistan, DLIMS Punjab, DLS Sindh, ITP Islamabad, ڈرائیونگ لائسنس ٹیسٹ, traffic signs quiz Urdu, L shape track Pakistan, S shape track, driving test practice online, learner license Pakistan, traffic sign quiz, road signs Pakistan" />
         <meta name="author" content="Traffic Sign Quiz PK" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="google-site-verification" content="wyDmitDRoDbqK5dIwD-SxvkykiWxepVcbQrSMR2mWko" />
         <link rel="canonical" href={SITE_URL} />
 
         {/* Open Graph */}
