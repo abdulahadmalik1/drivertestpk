@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://traffic-sign-quiz.vercel.app', // update with your real domain
+    siteUrl: 'https://drivetestpk.com',
     generateRobotsTxt: true,
     generateIndexSitemap: false,
     changefreq: 'monthly',

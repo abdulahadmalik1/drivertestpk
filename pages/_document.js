@@ -1,6 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 
-const SITE_URL = 'https://traffic-sign-quiz.vercel.app'; // update with your real domain
+const SITE_URL = 'https://drivetestpk.com';
 
 export default function Document() {
   const jsonLd = {
