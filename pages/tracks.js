@@ -29,6 +29,7 @@ export default function TracksPage() {
                 <Head>
                     <title>Driving Tracks — L-Shape & S-Shape Pakistan Driving Test</title>
                     <meta name="description" content="Learn L-Shape and S-Shape driving tracks required for Pakistan driving license test. Step-by-step photo guide." />
+                    {DRIVING_TRACKS.map(t => <link key={t.thumbnail} rel="preload" href={t.thumbnail} as="image" />)}
                 </Head>
                 <div className="app-container">
                     <div className="glass-card splash-card" style={{ gap: '1rem' }}>
@@ -62,6 +63,7 @@ export default function TracksPage() {
             <Head>
                 <title>{track.name.en} — Pakistan Driving License Track Guide</title>
                 <meta name="description" content={`Step-by-step photo guide for the ${track.name.en} driving track required in Pakistan driving license tests.`} />
+                {track.images.map(img => <link key={img} rel="preload" href={img} as="image" />)}
             </Head>
             <div className="app-container">
                 <div className="glass-card quiz-card">
