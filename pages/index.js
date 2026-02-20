@@ -3,10 +3,20 @@ import { useRouter } from 'next/router';
 import { useLang } from './_app';
 import { MenuCard } from '../lib/constants';
 
+import { useEffect } from 'react';
+
 export default function Home() {
   const router = useRouter();
   const { menuLang, setMenuLang } = useLang();
   const isMenuUrdu = menuLang === 'urdu';
+
+  useEffect(() => {
+    // Prefetch routes for instant button clicks
+    router.prefetch('/quiz');
+    router.prefetch('/learn');
+    router.prefetch('/tracks');
+    router.prefetch('/links');
+  }, [router]);
 
   return (
     <>
