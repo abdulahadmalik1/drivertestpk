@@ -31,6 +31,11 @@ const nextConfig = {
         source: '/tracks/:path*',
         headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
+      // Cache quiz JSON for 30 days
+      {
+        source: '/quiz_data.json',
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=2592000, stale-while-revalidate=86400' }],
+      },
     ];
   },
 };

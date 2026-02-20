@@ -1,14 +1,23 @@
 import Head from 'next/head';
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useLang } from './_app';
 import { QUIZ_MODES, shuffleArray, getOptionStatus, MenuCard } from '../lib/constants';
-import quizData from '../quiz_data.json';
 
 export default function QuizPage() {
     const router = useRouter();
     const { menuLang } = useLang();
     const isMenuUrdu = menuLang === 'urdu';
+
+    // Lazy-load quiz data from CDN — not bundled in JS
+    const [quizData, setQuizData] = useState(null);
+    const [dataLoading, setDataLoading] = useState(true);
+    useEffect(() => {
+        fetch('/quiz_data.json')
+            .then(r => r.json())
+            .then(d => { setQuizData(d); setDataLoading(false); })
+            .catch(() => setDataLoading(false));
+    }, []);
 
     const [screen, setScreen] = useState('picker'); // picker | quiz | result
     const [language, setLanguage] = useState('english');
@@ -63,12 +72,16 @@ export default function QuizPage() {
                 <div className="app-container">
                     <div className="glass-card splash-card">
                         <h1>{isMenuUrdu ? 'مشکل منتخب کریں' : 'Choose Quiz Length'}</h1>
-                        <p className="subtitle">{isMenuUrdu ? 'اپنی پسند کا ٹیسٹ چنیں' : 'Pick how many questions you want'}</p>
-                        <div className="action-menu" style={{ gap: '0.75rem' }}>
+                        <p className="subtitle">
+                            {dataLoading
+                                ? (isMenuUrdu ? 'سوالات لوڈ ہو رہے ہیں...' : 'Loading questions...')
+                                : (isMenuUrdu ? 'اپنی پسند کا ٹیسٹ چنیں' : 'Pick how many questions you want')}
+                        </p>
+                        <div className="action-menu" style={{ gap: '0.75rem', opacity: dataLoading ? 0.5 : 1, pointerEvents: dataLoading ? 'none' : 'auto' }}>
                             {quizModes.map(m => (
                                 <MenuCard
                                     key={m.count}
-                                    icon={m.icon}
+                                    icon={dataLoading ? '⏳' : m.icon}
                                     title={m.label}
                                     subtitle={m.sub}
                                     style={{ background: m.color, borderColor: m.border }}
