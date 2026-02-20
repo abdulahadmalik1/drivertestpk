@@ -1,0 +1,6 @@
+Question: Which part of vehicle must be clean every time?
+
+Options:
+A: Dash board
+B: front screen
+C: Head lights

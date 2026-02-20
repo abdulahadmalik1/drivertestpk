@@ -1,0 +1,6 @@
+Question: What will you have to do while stopping your vehicle
+
+Options:
+A: To press horn
+B: To use your lower gear
+C: To use back mirrors

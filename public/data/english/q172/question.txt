@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: First Aid Station
+B: Petrol Pump
+C: Hospital

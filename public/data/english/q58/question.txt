@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Wider than 16.6 Vehicles are prohibited
+B: Longer than 16.6 Vehicles are prohibited
+C: Higher than 16.6 Vehicles are prohibited

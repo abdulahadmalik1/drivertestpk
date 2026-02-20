@@ -1,0 +1,6 @@
+Question: Can you check the water immediately by opening the radiator lid if the car get heated?
+
+Options:
+A: Yes
+B: No
+C: Don't Know

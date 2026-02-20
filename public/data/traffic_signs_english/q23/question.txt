@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Two way Traffic
+B: One sided Traffic
+C: Dual Road

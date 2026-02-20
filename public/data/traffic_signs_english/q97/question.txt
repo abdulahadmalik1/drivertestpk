@@ -1,0 +1,7 @@
+Question: What Does this Sign means?
+
+Options:
+A: Zebra Crossing
+B: stop Line
+C: Junction Box
+D: Give way line

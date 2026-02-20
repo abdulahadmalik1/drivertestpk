@@ -1,0 +1,6 @@
+Question: Do You need a special Permit to transport Cattle?
+
+Options:
+A: Yes
+B: No
+C: Don't Know

@@ -1,0 +1,6 @@
+Question: You are allowed to overtake?
+
+Options:
+A: At main crossing
+B: At broken center line on road 
+C: At bridge

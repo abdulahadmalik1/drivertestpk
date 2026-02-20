@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Road is Closed
+B: Danger ahead
+C: x-junction give way to traffic coming from right

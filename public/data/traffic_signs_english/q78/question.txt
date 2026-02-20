@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Overtaking Allowed
+B: Overtaking is prohibited
+C: No Entry

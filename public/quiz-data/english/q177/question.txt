@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Dual Carriageway End
+B: Dual Carriageway Ahead
+C: Two Way Traffic

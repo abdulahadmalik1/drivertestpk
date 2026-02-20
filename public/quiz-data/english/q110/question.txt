@@ -1,0 +1,6 @@
+Question: Which part of the car gets damaged by holding the clutch of the moving vehicle
+
+Options:
+A: Break
+B: Clutch Plate
+C: Engine

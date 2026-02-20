@@ -1,0 +1,6 @@
+Question: Zebra crossing is specified for?
+
+Options:
+A: Animals
+B: Zebras
+C: Pedestrians

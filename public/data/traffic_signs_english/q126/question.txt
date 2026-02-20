@@ -1,0 +1,6 @@
+Question: What Does this Sign Means?
+
+Options:
+A: Left Stop
+B: No Right Turn
+C: Right Turn

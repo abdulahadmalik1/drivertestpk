@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: NO Entry for Cycle
+B: MCycles are prohibited
+C: All vehicles are prohibited

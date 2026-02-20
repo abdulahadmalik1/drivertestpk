@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Two way Traffic
+B: Narrow Road Ahead
+C: Narrow Bridge Ahead

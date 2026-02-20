@@ -1,0 +1,6 @@
+Question: Should a Driver used Lower Gears before going up hills in advance
+
+Options:
+A: True
+B: False
+C: Don't Know

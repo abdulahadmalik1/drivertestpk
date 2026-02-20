@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Overtaking Allowed if no vehicle is coming from front side
+B: Overtaking prohibited
+C: Stop line

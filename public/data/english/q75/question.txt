@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Level Crossing without Gate
+B: Railway Line
+C: Level Crossing with Gate

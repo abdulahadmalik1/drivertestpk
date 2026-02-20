@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Garbage Dump
+B: Pit on Roads
+C: Road work in progress

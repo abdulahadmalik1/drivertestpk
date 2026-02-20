@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://traffic-sign-quiz.vercel.app
+
+# Sitemaps
+Sitemap: https://traffic-sign-quiz.vercel.app/sitemap.xml

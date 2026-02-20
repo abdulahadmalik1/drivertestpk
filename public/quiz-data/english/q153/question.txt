@@ -1,0 +1,6 @@
+Question: If Luggage is loaded on roof, how many men sit on the roof of the bus?
+
+Options:
+A: One Man
+B: Two Man
+C: No Body

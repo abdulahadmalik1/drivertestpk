@@ -1,0 +1,6 @@
+Question: Which Vehicle has the right of way at roundabout?
+
+Options:
+A: The traffic coming from the right side
+B: The traffic coming from the left side
+C: None of them

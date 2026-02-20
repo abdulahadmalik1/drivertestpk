@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Loader Vehicles are prohibited
+B: Agriculture Vehicles are prohibited
+C: All Vehicles are prohibited

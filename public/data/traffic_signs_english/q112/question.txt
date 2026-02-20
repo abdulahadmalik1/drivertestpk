@@ -1,0 +1,6 @@
+Question: It is necessary to apply the break when vehicle is parked in a bus lane?
+
+Options:
+A: Not allowed to park in a bus lane
+B: No
+C: Yes

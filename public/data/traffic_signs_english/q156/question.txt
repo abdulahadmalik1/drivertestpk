@@ -1,0 +1,6 @@
+Question: What is the safe distance from next vehicle in case of heavy rain or storm?
+
+Options:
+A: safe distrance
+B: two times safe distance
+C: four times safe distance

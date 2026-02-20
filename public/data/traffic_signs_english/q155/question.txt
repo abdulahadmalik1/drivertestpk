@@ -1,0 +1,6 @@
+Question: At Junction , where the vehicle should be stopped?
+
+Options:
+A: Before the stop line
+B: In front of all traffic
+C: On Zebra crossing

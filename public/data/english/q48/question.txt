@@ -1,0 +1,6 @@
+Question: It is necessary to use Clutch for applying break always?
+
+Options:
+A: Yes
+B: No
+C: Always

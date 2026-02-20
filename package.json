@@ -1,20 +1,21 @@
 {
-  "name": "traffic-sign-next",
-  "version": "0.1.0",
+  "name": "traffic-sign-quiz-pk",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "14.2.35",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.35"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "eslint": "^8",
-    "eslint-config-next": "14.2.35"
+    "eslint-config-next": "14.2.35",
+    "next-sitemap": "^4.2.3"
   }
 }

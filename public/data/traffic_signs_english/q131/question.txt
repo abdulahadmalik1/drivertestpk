@@ -1,0 +1,6 @@
+Question: Can you park your vehicle at Bus stop?
+
+Options:
+A: Not allowed
+B: Can park
+C: Don't know

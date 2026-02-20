@@ -1,0 +1,6 @@
+Question: What Does this Sign means?
+
+Options:
+A: Hospital
+B: Telephone
+C: First Aid Centre
