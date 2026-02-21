@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useLang } from './_app';
 import { extractSigns, cleanSignName } from '../lib/constants';
@@ -10,8 +10,27 @@ export default function LearnPage({ signs }) {
     const { language } = useLang();
     const isUrdu = language === 'urdu';
 
-    const [view, setView] = useState('gallery'); // gallery | detail
+    const [view, setView] = useState('preloading'); // preloading | gallery | detail
     const [learnIndex, setLearnIndex] = useState(0);
+    const [loadProgress, setLoadProgress] = useState({ done: 0, total: signs.length });
+
+    // Preload ALL sign images on mount before showing gallery
+    useEffect(() => {
+        let done = 0;
+        const total = signs.length;
+        setLoadProgress({ done: 0, total });
+
+        Promise.all(signs.map(sign => new Promise(resolve => {
+            const img = new window.Image();
+            img.onload = img.onerror = () => {
+                setLoadProgress({ done: ++done, total });
+                resolve();
+            };
+            img.src = sign.image;
+        }))).then(() => {
+            setView('gallery');
+        });
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const openDetail = useCallback((idx) => {
         setLearnIndex(idx);
@@ -20,6 +39,34 @@ export default function LearnPage({ signs }) {
 
     const handleNextLearn = useCallback(() => setLearnIndex(p => (p + 1) % signs.length), [signs.length]);
     const handlePrevLearn = useCallback(() => setLearnIndex(p => (p - 1 + signs.length) % signs.length), [signs.length]);
+
+    // ── Preloading Screen ──
+    if (view === 'preloading') {
+        const pct = loadProgress.total > 0 ? Math.round((loadProgress.done / loadProgress.total) * 100) : 0;
+        return (
+            <>
+                <Head><title>Loading — Pakistan Driving License Guide</title></Head>
+                <div className="app-container">
+                    <div className="glass-card splash-card" style={{ gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{
+                            width: '40px', height: '40px', borderRadius: '50%',
+                            border: '3px solid rgba(255,255,255,0.08)',
+                            borderTop: '3px solid var(--primary-color)',
+                            animation: 'spin 0.8s linear infinite',
+                        }} />
+                        <div style={{ width: '180px', background: 'rgba(255,255,255,0.06)', borderRadius: '999px', height: '3px', overflow: 'hidden' }}>
+                            <div style={{
+                                height: '100%', width: `${pct}%`,
+                                background: 'var(--primary-color)',
+                                borderRadius: '999px',
+                                transition: 'width 0.2s ease',
+                            }} />
+                        </div>
+                    </div>
+                </div>
+            </>
+        );
+    }
 
     // ── Gallery ──
     if (view === 'gallery') {
@@ -39,7 +86,7 @@ export default function LearnPage({ signs }) {
                         <div className="gallery-grid">
                             {signs.map((sign, idx) => (
                                 <div key={sign.id} className="gallery-item" onClick={() => openDetail(idx)}>
-                                    <img src={sign.image} alt={sign.name} className="gallery-image" loading="lazy" />
+                                    <img src={sign.image} alt={sign.name} className="gallery-image" />
                                 </div>
                             ))}
                         </div>

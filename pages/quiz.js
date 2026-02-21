@@ -4,14 +4,32 @@ import { useRouter } from 'next/router';
 import { useLang } from './_app';
 import { QUIZ_MODES, shuffleArray, getOptionStatus, MenuCard } from '../lib/constants';
 
+// Preload all images for the given questions, tracking progress
+function preloadImages(questions, onProgress) {
+    const urls = [];
+    questions.forEach(q => {
+        if (q.image) urls.push(q.image);
+        q.options?.forEach(o => { if (o.image) urls.push(o.image); });
+    });
+    if (urls.length === 0) { onProgress(1, 1); return Promise.resolve(); }
+
+    let done = 0;
+    return Promise.all(urls.map(src => new Promise(resolve => {
+        const img = new window.Image();
+        img.onload = img.onerror = () => { onProgress(++done, urls.length); resolve(); };
+        img.src = src;
+    })));
+}
+
 export default function QuizPage({ quizData }) {
     const router = useRouter();
     const { menuLang } = useLang();
     const isMenuUrdu = menuLang === 'urdu';
 
-    const [screen, setScreen] = useState('picker'); // picker | quiz | result
+    const [screen, setScreen] = useState('picker'); // picker | loading | quiz | result
     const [language, setLanguage] = useState('english');
     const [questions, setQuestions] = useState([]);
+    const [loadProgress, setLoadProgress] = useState({ done: 0, total: 0 });
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedOption, setSelectedOption] = useState(null);
     const [isAnswerChecked, setIsAnswerChecked] = useState(false);
@@ -19,15 +37,23 @@ export default function QuizPage({ quizData }) {
 
     const isUrdu = language === 'urdu';
 
-    const startQuiz = useCallback((lang, count) => {
+    const startQuiz = useCallback(async (lang, count) => {
+        const selected = shuffleArray(quizData[lang]).slice(0, count);
         setLanguage(lang);
-        setQuestions(shuffleArray(quizData[lang]).slice(0, count));
+        setQuestions(selected);
         setCurrentQuestionIndex(0);
         setScore(0);
         setSelectedOption(null);
         setIsAnswerChecked(false);
+        setLoadProgress({ done: 0, total: 0 });
+        setScreen('loading');
+
+        await preloadImages(selected, (done, total) => {
+            setLoadProgress({ done, total });
+        });
+
         setScreen('quiz');
-    }, []);
+    }, [quizData]);
 
     const handleOptionClick = useCallback((optionId) => {
         if (isAnswerChecked) return;
@@ -86,6 +112,34 @@ export default function QuizPage({ quizData }) {
         );
     }
 
+    // ── Loading Screen ──
+    if (screen === 'loading') {
+        const pct = loadProgress.total > 0 ? Math.round((loadProgress.done / loadProgress.total) * 100) : 0;
+        return (
+            <>
+                <Head><title>Loading — Pakistan Driving Test</title></Head>
+                <div className="app-container">
+                    <div className="glass-card splash-card" style={{ gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{
+                            width: '40px', height: '40px', borderRadius: '50%',
+                            border: '3px solid rgba(255,255,255,0.08)',
+                            borderTop: '3px solid var(--primary-color)',
+                            animation: 'spin 0.8s linear infinite',
+                        }} />
+                        <div style={{ width: '180px', background: 'rgba(255,255,255,0.06)', borderRadius: '999px', height: '3px', overflow: 'hidden' }}>
+                            <div style={{
+                                height: '100%', width: `${pct}%`,
+                                background: 'var(--primary-color)',
+                                borderRadius: '999px',
+                                transition: 'width 0.2s ease',
+                            }} />
+                        </div>
+                    </div>
+                </div>
+            </>
+        );
+    }
+
     // ── Result screen ──
     if (screen === 'result') {
         const percentage = Math.round((score / questions.length) * 100);
@@ -124,15 +178,11 @@ export default function QuizPage({ quizData }) {
     const currentQuestion = questions[currentQuestionIndex];
     if (!currentQuestion) return null;
     const hasImageOptions = currentQuestion.options.some(opt => opt.image);
-    // Preload next question's image for snappy transitions
-    const nextQuestion = questions[currentQuestionIndex + 1];
-    const nextImgSrc = nextQuestion?.image || nextQuestion?.options?.find(o => o.image)?.image;
 
     return (
         <>
             <Head>
                 <title>Question {currentQuestionIndex + 1} — Pakistan Driving Test</title>
-                {nextImgSrc && <link rel="prefetch" href={nextImgSrc} as="image" />}
             </Head>
             <div className="app-container">
                 <div className="glass-card quiz-card">
