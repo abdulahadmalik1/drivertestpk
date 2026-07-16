@@ -107,14 +107,14 @@ const seoContent = (
         <details className="seo-accordion">
           <summary>What do the different colors on traffic signs signify? (ٹریفک نشانات پر مختلف رنگ کیا ظاہر کرتے ہیں؟)</summary>
           <div className="accordion-content">
-            <p>Red usually signifies a prohibition or danger. Blue circles indicate a mandatory positive instruction (like "Turn Left Ahead"). Green or blue rectangles are used for directions and information.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">سرخ رنگ عام طور پر ممانعت یا خطرے کو ظاہر کرتا ہے۔ نیلے دائرے لازمی مثبت ہدایت کی نشاندہی کرتے ہیں (جیسے "آگے سے بائیں مڑیں")۔ سبز یا نیلے مستطیل سمتوں اور معلومات کے لیے استعمال ہوتے ہیں۔</span></p>
+            <p>Red usually signifies a prohibition or danger. Blue circles indicate a mandatory positive instruction (like &quot;Turn Left Ahead&quot;). Green or blue rectangles are used for directions and information.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">سرخ رنگ عام طور پر ممانعت یا خطرے کو ظاہر کرتا ہے۔ نیلے دائرے لازمی مثبت ہدایت کی نشاندہی کرتے ہیں (جیسے &quot;آگے سے بائیں مڑیں&quot;)۔ سبز یا نیلے مستطیل سمتوں اور معلومات کے لیے استعمال ہوتے ہیں۔</span></p>
           </div>
         </details>
         
         <details className="seo-accordion">
           <summary>Which traffic signs are most commonly failed in the test? (ٹیسٹ میں کون سے ٹریفک نشانات میں سب سے زیادہ فیل ہوتے ہیں؟)</summary>
           <div className="accordion-content">
-            <p>Candidates frequently confuse "No Stopping" and "No Parking" signs, as well as the "Give Way" and "Stop" signs. Make sure to study the subtle differences in our <Link href="/learn">sign gallery</Link> before taking the quiz.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">امیدوار اکثر "نو سٹاپنگ" اور "نو پارکنگ" کے نشانات، نیز "راستہ دیں" اور "رکیں" کے نشانات میں الجھ جاتے ہیں۔ کوئز دینے سے پہلے ہماری سائن گیلری میں ان کے باریک فرق کا مطالعہ ضرور کریں۔</span></p>
+            <p>Candidates frequently confuse &quot;No Stopping&quot; and &quot;No Parking&quot; signs, as well as the &quot;Give Way&quot; and &quot;Stop&quot; signs. Make sure to study the subtle differences in our <Link href="/learn">sign gallery</Link> before taking the quiz.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">امیدوار اکثر &quot;نو سٹاپنگ&quot; اور &quot;نو پارکنگ&quot; کے نشانات، نیز &quot;راستہ دیں&quot; اور &quot;رکیں&quot; کے نشانات میں الجھ جاتے ہیں۔ کوئز دینے سے پہلے ہماری سائن گیلری میں ان کے باریک فرق کا مطالعہ ضرور کریں۔</span></p>
           </div>
         </details>
 
@@ -135,7 +135,7 @@ const seoContent = (
         <details className="seo-accordion">
           <summary>Is the traffic sign test computerized? (کیا ٹریفک سائن ٹیسٹ کمپیوٹرائزڈ ہے؟)</summary>
           <div className="accordion-content">
-            <p>Yes, across major testing centers in Pakistan, the traffic sign test has been completely digitized into an "e-sign test" using touch-screen computers.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">جی ہاں، پاکستان کے بڑے ٹیسٹنگ مراکز میں، ٹریفک سائن ٹیسٹ کو ٹچ سکرین کمپیوٹرز کا استعمال کرتے ہوئے مکمل طور پر "ای سائن ٹیسٹ" میں ڈیجیٹائز کر دیا گیا ہے۔</span></p>
+            <p>Yes, across major testing centers in Pakistan, the traffic sign test has been completely digitized into an &quot;e-sign test&quot; using touch-screen computers.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">جی ہاں، پاکستان کے بڑے ٹیسٹنگ مراکز میں، ٹریفک سائن ٹیسٹ کو ٹچ سکرین کمپیوٹرز کا استعمال کرتے ہوئے مکمل طور پر &quot;ای سائن ٹیسٹ&quot; میں ڈیجیٹائز کر دیا گیا ہے۔</span></p>
           </div>
         </details>
       </div>

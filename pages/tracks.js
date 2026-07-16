@@ -92,9 +92,9 @@ const seoContent = (
       <h2>Critical Rules for the Practical Test (پریکٹیکل ٹیسٹ کے اہم اصول)</h2>
       <p>Before you even begin moving the vehicle, the testing officer is evaluating you. Failing to follow these basic pre-drive protocols will cost you valuable points or result in an instant fail: <br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">گاڑی چلانا شروع کرنے سے پہلے ہی، ٹیسٹنگ افسر آپ کا جائزہ لے رہا ہوتا ہے۔ ڈرائیونگ سے پہلے کے ان بنیادی اصولوں پر عمل نہ کرنے کی صورت میں آپ کے قیمتی پوائنٹس کٹ سکتے ہیں یا آپ فوری طور پر فیل ہو سکتے ہیں:</span></p>
       <ul>
-        <li><strong>Seatbelt First (پہلے سیٹ بیلٹ):</strong> Fasten your seatbelt immediately after sitting in the driver's seat. Do not turn the ignition key until you are buckled up.</li>
+        <li><strong>Seatbelt First (پہلے سیٹ بیلٹ):</strong> Fasten your seatbelt immediately after sitting in the driver&apos;s seat. Do not turn the ignition key until you are buckled up.</li>
         <li><strong>Mirror Adjustments (شیشے سیٹ کریں):</strong> Visibly adjust your rearview and side mirrors. The L-shape reverse test relies entirely on your side mirrors; do not stick your head out of the window.</li>
-        <li><strong>Both Hands on the Wheel (دونوں ہاتھ سٹیرنگ پر):</strong> Keep both hands on the steering wheel at the 9 and 3 o'clock or 10 and 2 o'clock positions.</li>
+        <li><strong>Both Hands on the Wheel (دونوں ہاتھ سٹیرنگ پر):</strong> Keep both hands on the steering wheel at the 9 and 3 o&apos;clock or 10 and 2 o&apos;clock positions.</li>
         <li><strong>Use Indicators (اشاروں کا استعمال):</strong> Even on the closed track, use your turn signals when initiating a turn.</li>
       </ul>
 
