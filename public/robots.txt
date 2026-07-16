@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://traffic-sign-quiz.vercel.app
+Host: https://drivetestpk.com
 
 # Sitemaps
-Sitemap: https://traffic-sign-quiz.vercel.app/sitemap.xml
+Sitemap: https://drivetestpk.com/sitemap.xml

@@ -1,20 +1,19 @@
 .app-container {
   width: 100%;
   max-width: 600px;
-  padding: 0.5rem;
+  padding: 1rem 0.5rem 2rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 /* Glass Card */
 .glass-card {
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-top: 0;
+  margin-bottom: 0;
 
   background: rgba(15, 23, 42, 0.6);
   backdrop-filter: blur(20px);
@@ -544,3 +543,191 @@ h2 {
   font-size: 0.8rem;
   color: #94a3b8;
 }
+
+/* Master Accordion (Read More) */
+.seo-master-accordion {
+  width: 100%;
+  max-width: 800px;
+  margin: 1.5rem auto 0 auto;
+}
+
+.seo-master-summary {
+  cursor: pointer;
+  color: #94a3b8;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.seo-master-summary:hover {
+  color: #fff;
+}
+
+.seo-master-summary::-webkit-details-marker {
+  display: none;
+}
+
+.seo-master-summary::after {
+  content: '▼';
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.seo-master-accordion[open] .seo-master-summary::after {
+  transform: rotate(180deg);
+}
+
+/* SEO Content Section */
+.seo-content-wrapper {
+  width: 100%;
+  background: transparent;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.seo-content {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.seo-content h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  letter-spacing: normal;
+}
+
+.seo-content h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  text-align: left;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.seo-content h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  text-align: left;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.seo-content p {
+  margin-bottom: 1rem;
+}
+
+.seo-content ul {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.seo-content li {
+  margin-bottom: 0.5rem;
+}
+
+.seo-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.seo-content a:hover {
+  text-decoration: underline;
+}
+
+.seo-faq {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.seo-faq-item {
+  margin-bottom: 1.25rem;
+}
+
+.seo-faq-item h3 {
+  margin-top: 0;
+  color: #f8fafc;
+}
+
+/* SEO Accordion Styles */
+.seo-accordion-container {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.seo-accordion {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.seo-accordion:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.seo-accordion summary {
+  padding: 1.1rem 1.25rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #f1f5f9;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seo-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.seo-accordion summary::after {
+  content: "+";
+  color: #94a3b8;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: transform 0.3s ease;
+  font-weight: 300;
+}
+
+.seo-accordion[open] summary::after {
+  content: "−";
+  transform: rotate(180deg);
+}
+
+.seo-accordion .accordion-content {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.seo-accordion .accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+.seo-accordion .accordion-content ul:last-child {
+  margin-bottom: 0;
+}

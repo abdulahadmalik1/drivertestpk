@@ -97,7 +97,7 @@ export default function Document() {
         <meta property="og:description" content="Practice 100+ traffic signs in English & Urdu. Driving tracks, DLIMS portals, traffic fines — everything to pass your test." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={SITE_URL} />
-        <meta property="og:image" content={`${SITE_URL}/logo512.png`} />
+        <meta property="og:image" content={`${SITE_URL}/android-chrome-512x512.png`} />
         <meta property="og:image:width" content="512" />
         <meta property="og:image:height" content="512" />
         <meta property="og:locale" content="en_PK" />
@@ -106,11 +106,13 @@ export default function Document() {
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Pakistan Driving License Test — Free Practice Quiz" />
         <meta name="twitter:description" content="Practice traffic signs in English & Urdu. Driving tracks, DLIMS portals & more." />
-        <meta name="twitter:image" content={`${SITE_URL}/logo512.png`} />
+        <meta name="twitter:image" content={`${SITE_URL}/android-chrome-512x512.png`} />
 
         {/* PWA */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/logo192.png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
 
         {/* Preconnect for faster font/resource loading */}

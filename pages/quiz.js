@@ -1,8 +1,148 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { useLang } from './_app';
 import { QUIZ_MODES, shuffleArray, getOptionStatus, MenuCard } from '../lib/constants';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Pakistan Driving License Quiz",
+  "description": "Take our free online traffic sign quiz to prepare for the Pakistan driving license test. Practice multiple-choice questions in English and Urdu.",
+  "url": "https://drivetestpk.com/quiz"
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://drivetestpk.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Driving Test Quiz", "item": "https://drivetestpk.com/quiz" }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What do the different shapes of traffic signs mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In Pakistan's traffic sign test, shapes are critical: circles mean mandatory orders (you must do it), triangles are warning signs (danger ahead), and rectangles provide information or guidance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do the different colors on traffic signs signify?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Red usually signifies a prohibition or danger. Blue circles indicate a mandatory positive instruction (like 'Turn Left Ahead'). Green or blue rectangles are used for directions and information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which traffic signs are most commonly failed in the test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Candidates frequently confuse 'No Stopping' and 'No Parking' signs, as well as the 'Give Way' and 'Stop' signs. Make sure to study the subtle differences in our sign gallery before taking the quiz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to memorize the Urdu names of the signs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "While you can choose to take the computerized test in English, knowing the Urdu terminology is highly recommended as the official test often displays both languages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many traffic sign questions are asked in the driving test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The computerized e-sign test typically consists of 10 to 20 multiple-choice questions depending on your province (DLIMS Punjab, Sindh, or ITP). You must score above 50% to pass."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the traffic sign test computerized?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, across major testing centers in Pakistan, the traffic sign test has been completely digitized into an 'e-sign test' using touch-screen computers."
+      }
+    }
+  ]
+};
+
+const seoHead = (
+  <Head>
+    <title>Pakistan Driving Test Quiz | Practice Traffic Signs Online</title>
+    <meta name="description" content="Take our free online traffic sign quiz to prepare for the Pakistan driving license test. Practice multiple-choice questions in English and Urdu." />
+    <link rel="canonical" href="https://drivetestpk.com/quiz" />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+  </Head>
+);
+
+const seoContent = (
+  <details className="seo-master-accordion">
+    <summary className="seo-master-summary">Read FAQs & Guide</summary>
+    <div className="seo-content-wrapper">
+    <article className="seo-content">
+      <h1>Pakistan Driving License Traffic Sign Quiz (پاکستان ڈرائیونگ لائسنس ٹریفک سائن کوئز)</h1>
+      <p>Passing the computerized traffic sign test (e-sign test) is your first major hurdle in getting a driving license. This mock simulator tests your knowledge of all official traffic signs to ensure you are fully prepared for the real exam.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">کمپیوٹرائزڈ ٹریفک سائن ٹیسٹ (ای سائن ٹیسٹ) پاس کرنا ڈرائیونگ لائسنس کے حصول میں آپ کی پہلی بڑی رکاوٹ ہے۔ یہ ماک سمیلیٹر آپ کے علم کی جانچ کرتا ہے تاکہ یہ یقینی بنایا جا سکے کہ آپ اصل امتحان کے لیے پوری طرح تیار ہیں۔</span></p>
+      
+      <div className="seo-accordion-container">
+        <details className="seo-accordion">
+          <summary>What do the different shapes of traffic signs mean? (ٹریفک نشانات کی مختلف اشکال کا کیا مطلب ہے؟)</summary>
+          <div className="accordion-content">
+             <p>In Pakistan's traffic sign test, shapes are critical: circles mean mandatory orders (you must do it), triangles are warning signs (danger ahead), and rectangles provide information or guidance.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">پاکستان کے ٹریفک سائن ٹیسٹ میں، شکلیں بہت اہم ہیں: دائروں کا مطلب لازمی احکامات ہیں، تکون انتباہی نشانات ہیں (آگے خطرہ ہے)، اور مستطیل معلومات یا رہنمائی فراہم کرتے ہیں۔</span></p>
+          </div>
+        </details>
+
+        <details className="seo-accordion">
+          <summary>What do the different colors on traffic signs signify? (ٹریفک نشانات پر مختلف رنگ کیا ظاہر کرتے ہیں؟)</summary>
+          <div className="accordion-content">
+            <p>Red usually signifies a prohibition or danger. Blue circles indicate a mandatory positive instruction (like "Turn Left Ahead"). Green or blue rectangles are used for directions and information.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">سرخ رنگ عام طور پر ممانعت یا خطرے کو ظاہر کرتا ہے۔ نیلے دائرے لازمی مثبت ہدایت کی نشاندہی کرتے ہیں (جیسے "آگے سے بائیں مڑیں")۔ سبز یا نیلے مستطیل سمتوں اور معلومات کے لیے استعمال ہوتے ہیں۔</span></p>
+          </div>
+        </details>
+        
+        <details className="seo-accordion">
+          <summary>Which traffic signs are most commonly failed in the test? (ٹیسٹ میں کون سے ٹریفک نشانات میں سب سے زیادہ فیل ہوتے ہیں؟)</summary>
+          <div className="accordion-content">
+            <p>Candidates frequently confuse "No Stopping" and "No Parking" signs, as well as the "Give Way" and "Stop" signs. Make sure to study the subtle differences in our <Link href="/learn">sign gallery</Link> before taking the quiz.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">امیدوار اکثر "نو سٹاپنگ" اور "نو پارکنگ" کے نشانات، نیز "راستہ دیں" اور "رکیں" کے نشانات میں الجھ جاتے ہیں۔ کوئز دینے سے پہلے ہماری سائن گیلری میں ان کے باریک فرق کا مطالعہ ضرور کریں۔</span></p>
+          </div>
+        </details>
+
+        <details className="seo-accordion">
+          <summary>Do I need to memorize the Urdu names of the signs? (کیا مجھے نشانات کے اردو نام یاد کرنے کی ضرورت ہے؟)</summary>
+          <div className="accordion-content">
+            <p>While you can choose to take the computerized test in English, knowing the Urdu terminology is highly recommended as the official test often displays both languages.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">اگرچہ آپ انگریزی میں کمپیوٹرائزڈ ٹیسٹ دینے کا انتخاب کر سکتے ہیں، لیکن اردو اصطلاحات جاننے کی انتہائی سفارش کی جاتی ہے کیونکہ سرکاری ٹیسٹ میں اکثر دونوں زبانیں دکھائی جاتی ہیں۔</span></p>
+          </div>
+        </details>
+
+        <details className="seo-accordion">
+          <summary>How many traffic sign questions are asked in the driving test? (ڈرائیونگ ٹیسٹ میں ٹریفک نشانات کے کتنے سوالات پوچھے جاتے ہیں؟)</summary>
+          <div className="accordion-content">
+            <p>The computerized e-sign test typically consists of 10 to 20 multiple-choice questions depending on your province (DLIMS Punjab, Sindh, or ITP). You must score at least 50% to pass.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">صوبے کے لحاظ سے کمپیوٹرائزڈ ای سائن ٹیسٹ عام طور پر 10 سے 20 سوالات پر مشتمل ہوتا ہے۔ پاس ہونے کے لیے آپ کو کم از کم 50% سکور کرنا ہوگا۔</span></p>
+          </div>
+        </details>
+        
+        <details className="seo-accordion">
+          <summary>Is the traffic sign test computerized? (کیا ٹریفک سائن ٹیسٹ کمپیوٹرائزڈ ہے؟)</summary>
+          <div className="accordion-content">
+            <p>Yes, across major testing centers in Pakistan, the traffic sign test has been completely digitized into an "e-sign test" using touch-screen computers.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">جی ہاں، پاکستان کے بڑے ٹیسٹنگ مراکز میں، ٹریفک سائن ٹیسٹ کو ٹچ سکرین کمپیوٹرز کا استعمال کرتے ہوئے مکمل طور پر "ای سائن ٹیسٹ" میں ڈیجیٹائز کر دیا گیا ہے۔</span></p>
+          </div>
+        </details>
+      </div>
+    </article>
+    </div>
+  </details>
+);
 
 // Preload all images for the given questions, tracking progress
 function preloadImages(questions, onProgress) {
@@ -84,7 +224,7 @@ export default function QuizPage({ quizData }) {
     if (screen === 'picker') {
         return (
             <>
-                <Head><title>Choose Quiz Length — Pakistan Driving Test</title></Head>
+                {seoHead}
                 <div className="app-container">
                     <div className="glass-card splash-card">
                         <h1>{isMenuUrdu ? 'مشکل منتخب کریں' : 'Choose Quiz Length'}</h1>
@@ -107,6 +247,7 @@ export default function QuizPage({ quizData }) {
                             {isMenuUrdu ? '← واپس' : '← Back'}
                         </button>
                     </div>
+                    {seoContent}
                 </div>
             </>
         );
@@ -117,7 +258,7 @@ export default function QuizPage({ quizData }) {
         const pct = loadProgress.total > 0 ? Math.round((loadProgress.done / loadProgress.total) * 100) : 0;
         return (
             <>
-                <Head><title>Loading — Pakistan Driving Test</title></Head>
+                {seoHead}
                 <div className="app-container">
                     <div className="glass-card splash-card" style={{ gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
                         <div style={{
@@ -135,6 +276,7 @@ export default function QuizPage({ quizData }) {
                             }} />
                         </div>
                     </div>
+                    {seoContent}
                 </div>
             </>
         );
@@ -155,7 +297,12 @@ export default function QuizPage({ quizData }) {
         }
         return (
             <>
-                <Head><title>Quiz Result — Pakistan Driving Test</title></Head>
+                <Head>
+                    <title>Quiz Result — Pakistan Driving Test</title>
+                    <link rel="canonical" href="https://drivetestpk.com/quiz" />
+                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+                </Head>
                 <div className="app-container">
                     <div className="glass-card results-container">
                         <h1>Quiz Completed!</h1>
@@ -169,6 +316,7 @@ export default function QuizPage({ quizData }) {
                             {isUrdu ? 'دوبارہ شروع کریں' : 'Back to Menu'}
                         </button>
                     </div>
+                    {seoContent}
                 </div>
             </>
         );
@@ -183,6 +331,9 @@ export default function QuizPage({ quizData }) {
         <>
             <Head>
                 <title>Question {currentQuestionIndex + 1} — Pakistan Driving Test</title>
+                <link rel="canonical" href="https://drivetestpk.com/quiz" />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             </Head>
             <div className="app-container">
                 <div className="glass-card quiz-card">
@@ -235,9 +386,10 @@ export default function QuizPage({ quizData }) {
                             </button>
                         )}
                     </div>
+                    </div>
+                    {seoContent}
                 </div>
-            </div>
-        </>
+            </>
     );
 }
 
