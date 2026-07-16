@@ -273,6 +273,7 @@ export default function QuizPage({ quizData }) {
 
     // ── Active Quiz ──
     const currentQuestion = questions[currentQuestionIndex];
+    const nextQuestion = questions[currentQuestionIndex + 1];
     if (!currentQuestion) return null;
     const hasImageOptions = currentQuestion.options.some(opt => opt.image);
 
@@ -284,6 +285,13 @@ export default function QuizPage({ quizData }) {
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
             </Head>
+            {/* Hidden Preload for Next Question */}
+            {nextQuestion && (
+                <div style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', opacity: 0, pointerEvents: 'none' }}>
+                    {nextQuestion.image && <Image src={nextQuestion.image} alt="preload" width={400} height={180} priority />}
+                    {nextQuestion.options?.map(opt => opt.image && <Image key={`preload-${opt.id}`} src={opt.image} alt="preload" width={200} height={100} priority />)}
+                </div>
+            )}
             <div className="app-container">
                 <div className="glass-card quiz-card">
                     <div className="quiz-header">
@@ -299,7 +307,7 @@ export default function QuizPage({ quizData }) {
                     <div className="question-area">
                         {currentQuestion.image && (
                             <div className="main-image-container">
-                                <Image src={currentQuestion.image} alt="Question Sign" width={400} height={180} className="question-image" priority style={{ objectFit: 'contain' }} />
+                                <Image key={currentQuestion.image} src={currentQuestion.image} alt="Question Sign" width={400} height={180} className="question-image" priority style={{ objectFit: 'contain' }} />
                             </div>
                         )}
                         <h2 className={`question-text ${isUrdu ? 'urdu' : ''}`}>{currentQuestion.question}</h2>
@@ -317,7 +325,7 @@ export default function QuizPage({ quizData }) {
                                     disabled={isAnswerChecked}
                                 >
                                     {opt.image
-                                        ? <Image src={opt.image} alt={`Option ${opt.id}`} width={200} height={100} className="option-image" priority={currentQuestionIndex === 0} style={{ objectFit: 'contain' }} />
+                                        ? <Image key={opt.image} src={opt.image} alt={`Option ${opt.id}`} width={200} height={100} className="option-image" priority style={{ objectFit: 'contain' }} />
                                         : <span>{opt.text}</span>
                                     }
                                 </button>
