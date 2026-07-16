@@ -49,13 +49,13 @@ const seoContent = (
     <div className="seo-content-wrapper">
     <article className="seo-content">
       <h1>Official DLIMS & Pakistan Driving License Portals (سرکاری DLIMS اور ڈرائیونگ لائسنس پورٹلز)</h1>
-      <p>Navigating government websites can sometimes be confusing. This page provides a curated, direct list of official web portals for driving license issuance, verification, and management across Pakistan's provinces.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">سرکاری ویب سائٹس تلاش کرنا بعض اوقات الجھن کا باعث بن سکتا ہے۔ یہ صفحہ پاکستان کے صوبوں میں ڈرائیونگ لائسنس کے اجراء، تصدیق اور انتظام کے لیے سرکاری ویب پورٹلز کی براہ راست اور مستند فہرست فراہم کرتا ہے۔</span></p>
+      <p>Navigating government websites can sometimes be confusing. This page provides a curated, direct list of official web portals for driving license issuance, verification, and management across Pakistan&apos;s provinces.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">سرکاری ویب سائٹس تلاش کرنا بعض اوقات الجھن کا باعث بن سکتا ہے۔ یہ صفحہ پاکستان کے صوبوں میں ڈرائیونگ لائسنس کے اجراء، تصدیق اور انتظام کے لیے سرکاری ویب پورٹلز کی براہ راست اور مستند فہرست فراہم کرتا ہے۔</span></p>
       
       <h2>What This Tool Does (یہ ٹول کیا کرتا ہے)</h2>
       <p>We provide safe, direct links to the official Driving License Issuance and Management Systems (DLIMS) for Punjab, Sindh, Islamabad, and other regions. You can click on the respective buttons to be securely redirected to the government sites.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">ہم پنجاب، سندھ، اسلام آباد اور دیگر علاقوں کے لیے سرکاری (DLIMS) کے محفوظ اور براہ راست لنکس فراہم کرتے ہیں۔ آپ سرکاری سائٹس پر محفوظ طریقے سے جانے کے لیے متعلقہ بٹنوں پر کلک کر سکتے ہیں۔</span></p>
       
       <h2>Who Should Use It? (اسے کسے استعمال کرنا چاہیے؟)</h2>
-      <p>This directory is meant for all Pakistani citizens who need to register for a learner's permit, renew an expired license, check their application status, or download a digital e-license.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">یہ ان تمام پاکستانی شہریوں کے لیے ہے جنہیں لرنر پرمٹ کے لیے رجسٹر کرنے، میعاد ختم ہونے والے لائسنس کی تجدید کرنے، اپنی درخواست کا اسٹیٹس چیک کرنے، یا ڈیجیٹل ای لائسنس ڈاؤن لوڈ کرنے کی ضرورت ہے۔</span></p>
+      <p>This directory is meant for all Pakistani citizens who need to register for a learner&apos;s permit, renew an expired license, check their application status, or download a digital e-license.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">یہ ان تمام پاکستانی شہریوں کے لیے ہے جنہیں لرنر پرمٹ کے لیے رجسٹر کرنے، میعاد ختم ہونے والے لائسنس کی تجدید کرنے، اپنی درخواست کا اسٹیٹس چیک کرنے، یا ڈیجیٹل ای لائسنس ڈاؤن لوڈ کرنے کی ضرورت ہے۔</span></p>
       
       <h2>Why It Is Useful (یہ کیوں مفید ہے)</h2>
       <p>Using the exact official URLs protects you from phishing and fake websites. Having all provincial portals in one place saves you time and ensures you are accessing the correct services, whether you are in Lahore, Karachi, or Islamabad.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">درست سرکاری لنکس کا استعمال آپ کو جعلی ویب سائٹس سے بچاتا ہے۔ تمام صوبائی پورٹلز کا ایک جگہ ہونا آپ کا وقت بچاتا ہے اور یقینی بناتا ہے کہ آپ درست سروسز استعمال کر رہے ہیں۔</span></p>
@@ -74,7 +74,7 @@ const seoContent = (
         </div>
         <div className="seo-faq-item">
           <h3>How do I apply for an e-license? (میں ای لائسنس کے لیے کیسے اپلائی کروں؟)</h3>
-          <p>Once you pass your driving test, you can download an electronic copy (e-license) directly from your province's official DLIMS website.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">ڈرائیونگ ٹیسٹ پاس کرنے کے بعد، آپ اپنے صوبے کی سرکاری ویب سائٹ سے براہ راست الیکٹرانک کاپی (ای لائسنس) ڈاؤن لوڈ کر سکتے ہیں۔</span></p>
+          <p>Once you pass your driving test, you can download an electronic copy (e-license) directly from your province&apos;s official DLIMS website.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">ڈرائیونگ ٹیسٹ پاس کرنے کے بعد، آپ اپنے صوبے کی سرکاری ویب سائٹ سے براہ راست الیکٹرانک کاپی (ای لائسنس) ڈاؤن لوڈ کر سکتے ہیں۔</span></p>
         </div>
       </div>
     </article>

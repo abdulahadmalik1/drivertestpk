@@ -103,13 +103,13 @@ const seoContent = (
     <div className="seo-content-wrapper">
     <article className="seo-content">
       <h1>Pakistan Traffic Signs Guide (پاکستان ٹریفک نشانات گائیڈ)</h1>
-      <p>Welcome to the ultimate guide to mastering road signs for your driving license test. Whether you are preparing for your learner's permit or permanent license, understanding these symbols is critical for the computerized sign test (e-sign test) and for your safety on the road.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">اپنے ڈرائیونگ لائسنس ٹیسٹ کے لیے سڑک کے نشانات میں مہارت حاصل کرنے کی حتمی گائیڈ میں خوش آمدید۔ چاہے آپ اپنے لرنر پرمٹ کی تیاری کر رہے ہوں یا مستقل لائسنس کی، ان علامات کو سمجھنا کمپیوٹرائزڈ سائن ٹیسٹ اور سڑک پر آپ کی حفاظت کے لیے انتہائی ضروری ہے۔</span></p>
+      <p>Welcome to the ultimate guide to mastering road signs for your driving license test. Whether you are preparing for your learner&apos;s permit or permanent license, understanding these symbols is critical for the computerized sign test (e-sign test) and for your safety on the road.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">اپنے ڈرائیونگ لائسنس ٹیسٹ کے لیے سڑک کے نشانات میں مہارت حاصل کرنے کی حتمی گائیڈ میں خوش آمدید۔ چاہے آپ اپنے لرنر پرمٹ کی تیاری کر رہے ہوں یا مستقل لائسنس کی، ان علامات کو سمجھنا کمپیوٹرائزڈ سائن ٹیسٹ اور سڑک پر آپ کی حفاظت کے لیے انتہائی ضروری ہے۔</span></p>
 
       <div className="seo-accordion-container">
         <details className="seo-accordion">
           <summary>How long after getting a learner permit can I take the regular driving test? (لرنر پرمٹ کے بعد ڈرائیونگ ٹیسٹ کب دے سکتے ہیں؟)</summary>
           <div className="accordion-content">
-             <p>In Pakistan, you must wait a minimum of 42 days after the issuance of your learner's permit before you are eligible to appear for the permanent driving license test.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">پاکستان میں، آپ کو لرنر پرمٹ جاری ہونے کے بعد کم از کم 42 دن کا انتظار کرنا ہوگا اس سے پہلے کہ آپ مستقل ڈرائیونگ لائسنس ٹیسٹ کے لیے اہل ہوں۔</span></p>
+             <p>In Pakistan, you must wait a minimum of 42 days after the issuance of your learner&apos;s permit before you are eligible to appear for the permanent driving license test.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">پاکستان میں، آپ کو لرنر پرمٹ جاری ہونے کے بعد کم از کم 42 دن کا انتظار کرنا ہوگا اس سے پہلے کہ آپ مستقل ڈرائیونگ لائسنس ٹیسٹ کے لیے اہل ہوں۔</span></p>
           </div>
         </details>
 
@@ -144,7 +144,7 @@ const seoContent = (
         <details className="seo-accordion">
           <summary>Do I need to bring my original CNIC for the test? (کیا مجھے ٹیسٹ کے لیے اصل شناختی کارڈ لانا ہوگا؟)</summary>
           <div className="accordion-content">
-            <p>Absolutely. You must bring your original, valid computerized National Identity Card (CNIC) and your valid original learner's permit on the day of your driving test. Copies are not accepted.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">بالکل۔ آپ کو اپنے ڈرائیونگ ٹیسٹ کے دن اپنا اصل، درست کمپیوٹرائزڈ قومی شناختی کارڈ (CNIC) اور اپنا درست اصل لرنر پرمٹ لانا ہوگا۔ کاپیاں قبول نہیں کی جاتیں۔</span></p>
+            <p>Absolutely. You must bring your original, valid computerized National Identity Card (CNIC) and your valid original learner&apos;s permit on the day of your driving test. Copies are not accepted.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">بالکل۔ آپ کو اپنے ڈرائیونگ ٹیسٹ کے دن اپنا اصل، درست کمپیوٹرائزڈ قومی شناختی کارڈ (CNIC) اور اپنا درست اصل لرنر پرمٹ لانا ہوگا۔ کاپیاں قبول نہیں کی جاتیں۔</span></p>
           </div>
         </details>
       </div>

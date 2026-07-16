@@ -100,7 +100,7 @@ const seoContent = (
         <details className="seo-accordion">
           <summary>What do the different shapes of traffic signs mean? (ٹریفک نشانات کی مختلف اشکال کا کیا مطلب ہے؟)</summary>
           <div className="accordion-content">
-             <p>In Pakistan's traffic sign test, shapes are critical: circles mean mandatory orders (you must do it), triangles are warning signs (danger ahead), and rectangles provide information or guidance.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">پاکستان کے ٹریفک سائن ٹیسٹ میں، شکلیں بہت اہم ہیں: دائروں کا مطلب لازمی احکامات ہیں، تکون انتباہی نشانات ہیں (آگے خطرہ ہے)، اور مستطیل معلومات یا رہنمائی فراہم کرتے ہیں۔</span></p>
+             <p>In Pakistan&apos;s traffic sign test, shapes are critical: circles mean mandatory orders (you must do it), triangles are warning signs (danger ahead), and rectangles provide information or guidance.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">پاکستان کے ٹریفک سائن ٹیسٹ میں، شکلیں بہت اہم ہیں: دائروں کا مطلب لازمی احکامات ہیں، تکون انتباہی نشانات ہیں (آگے خطرہ ہے)، اور مستطیل معلومات یا رہنمائی فراہم کرتے ہیں۔</span></p>
           </div>
         </details>
 
