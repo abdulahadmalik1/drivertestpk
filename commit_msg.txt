@@ -1,18 +1,12 @@
-Lighthouse fixes: performance, accessibility, SEO, security headers
+fix: remove CSP and COOP headers that blocked JS in production
 
-- Remove blocking image preloaders on learn/quiz pages (fixes NO_FCP)
-- Add main landmark and skip-link to all pages
-- Add aria-labels, aria-pressed, aria-live, role=progressbar
-- Convert div+onClick gallery/track cards to semantic buttons
-- Fix heading hierarchy across all pages
-- Add explicit width/height to all images (CLS prevention)
-- Add lazy loading to gallery images
-- Fix touch targets to min 44px on all buttons
-- Improve color contrast (#64748b -> #94a3b8)
-- Add focus-visible keyboard outlines in globals.css
-- Add prefers-reduced-motion media query
-- Add security headers: HSTS, CSP, COOP, Permissions-Policy
-- Add public/llms.txt for Agentic Browsing score
-- Fix CSP to allow unsafe-eval in dev mode only
-- Remove incorrect viewport meta from _document.js
-- Add skip to main content link in _app.js
+CSP with unsafe-inline is incompatible with Next.js production builds
+because Next.js generates inline scripts with specific nonces/hashes.
+The CSP was silently blocking script execution causing NO_FCP on
+PageSpeed Insights / Lighthouse.
+
+Also removed Cross-Origin-Opener-Policy: same-origin which can
+interfere with Google Analytics measurement.
+
+Kept safe headers: HSTS, X-Content-Type-Options, X-Frame-Options,
+Referrer-Policy, Permissions-Policy.
