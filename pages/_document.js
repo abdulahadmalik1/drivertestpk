@@ -80,6 +80,19 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DE6FP5MHJ4"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-DE6FP5MHJ4');
+            `
+          }}
+        />
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#0f1117" />
 
