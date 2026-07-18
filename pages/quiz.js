@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useCallback, useMemo } from 'react';
+import { useState, useCallback, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useLang } from './_app';
 import { QUIZ_MODES, shuffleArray, getOptionStatus, MenuCard } from '../lib/constants';
@@ -150,7 +150,8 @@ export default function QuizPage({ quizData }) {
     const { menuLang } = useLang();
     const isMenuUrdu = menuLang === 'urdu';
 
-    const [screen, setScreen] = useState('picker'); // picker | quiz | result
+    const [screen, setScreen] = useState('picker'); // picker | preloading | quiz | result
+    const [loadProgress, setLoadProgress] = useState({ done: 0, total: 0 });
     const [language, setLanguage] = useState('english');
     const [questions, setQuestions] = useState([]);
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -160,6 +161,38 @@ export default function QuizPage({ quizData }) {
 
     const isUrdu = language === 'urdu';
 
+    useEffect(() => {
+        if (screen === 'preloading' && questions.length > 0) {
+            const imagesToLoad = new Set();
+            questions.forEach(q => {
+                if (q.image) imagesToLoad.add(q.image);
+                q.options?.forEach(opt => {
+                    if (opt.image) imagesToLoad.add(opt.image);
+                });
+            });
+
+            const total = imagesToLoad.size;
+            if (total === 0) {
+                setScreen('quiz');
+                return;
+            }
+
+            let done = 0;
+            setLoadProgress({ done: 0, total });
+
+            Promise.all(Array.from(imagesToLoad).map(src => new Promise(resolve => {
+                const img = new window.Image();
+                img.onload = img.onerror = () => {
+                    setLoadProgress({ done: ++done, total });
+                    resolve();
+                };
+                img.src = src;
+            }))).then(() => {
+                setScreen('quiz');
+            });
+        }
+    }, [screen, questions]);
+
     const startQuiz = useCallback((lang, count) => {
         const selected = shuffleArray(quizData[lang]).slice(0, count);
         setLanguage(lang);
@@ -168,7 +201,7 @@ export default function QuizPage({ quizData }) {
         setScore(0);
         setSelectedOption(null);
         setIsAnswerChecked(false);
-        setScreen('quiz');
+        setScreen('preloading');
     }, [quizData]);
 
     const handleOptionClick = useCallback((optionId) => {
@@ -229,7 +262,37 @@ export default function QuizPage({ quizData }) {
         );
     }
 
-    // Loading screen removed for optimized Image loading
+    // ── Preloading Screen ──
+    if (screen === 'preloading') {
+        const pct = loadProgress.total > 0 ? Math.round((loadProgress.done / loadProgress.total) * 100) : 0;
+        return (
+            <>
+                {seoHead}
+                <div className="app-container">
+                    <div className="glass-card splash-card" style={{ gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
+                        <div style={{
+                            width: '40px', height: '40px', borderRadius: '50%',
+                            border: '3px solid rgba(255,255,255,0.08)',
+                            borderTop: '3px solid var(--primary-color)',
+                            animation: 'spin 0.8s linear infinite',
+                        }} />
+                        <div style={{ width: '180px', background: 'rgba(255,255,255,0.06)', borderRadius: '999px', height: '3px', overflow: 'hidden' }}>
+                            <div style={{
+                                height: '100%', width: `${pct}%`,
+                                background: 'var(--primary-color)',
+                                borderRadius: '999px',
+                                transition: 'width 0.2s ease',
+                            }} />
+                        </div>
+                        <div style={{color: 'var(--text-secondary)', fontSize: '0.875rem', marginTop: '0.5rem'}}>
+                            {isUrdu ? 'سوالات لوڈ ہو رہے ہیں...' : 'Loading quiz...'} {pct}%
+                        </div>
+                    </div>
+                    {seoContent}
+                </div>
+            </>
+        );
+    }
 
     // ── Result screen ──
     if (screen === 'result') {

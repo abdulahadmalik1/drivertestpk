@@ -210,6 +210,9 @@ export default function LearnPage({ signs }) {
                                 transition: 'width 0.2s ease',
                             }} />
                         </div>
+                        <div style={{color: 'var(--text-secondary)', fontSize: '0.875rem', marginTop: '0.5rem'}}>
+                            {isUrdu ? 'نشانات لوڈ ہو رہے ہیں...' : 'Loading signs...'} {pct}%
+                        </div>
                     </div>
                     {seoContent}
                 </div>
