@@ -1,6 +1,3 @@
-fix: perfect 100 Lighthouse score optimizations
+fix: resolve final color contrast accessibility warning
 
-- Performance: Removed track image prefetching in index.js which was triggering a 7MB network payload during FCP window and tanking the score.
-- Accessibility: Changed MenuCard title from h3 to h2 to fix non-sequential heading order.
-- Accessibility: Increased color contrast for secondary text and card arrows to pass AA standard.
-- Agentic Browsing: Reformatted llms.txt to use proper Markdown links to pass Lighthouse AI standard.
+Replaced all remaining instances of the #94a3b8 dim gray color with #cbd5e1 silver. This fixes the final contrast ratio warning flagged by Lighthouse for the language toggle buttons, subtitle text, track info, and SEO accordions.

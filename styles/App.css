@@ -81,13 +81,13 @@ h2 {
   font-size: 1rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #94a3b8;
+  color: #cbd5e1;
   font-weight: 400;
 }
 
 .subtitle {
   font-size: 0.95rem;
-  color: #94a3b8;
+  color: #cbd5e1;
   text-align: center;
   margin-bottom: 2rem;
   line-height: 1.5;
@@ -111,7 +111,7 @@ h2 {
   border: none;
   border-radius: 10px;
   background: transparent;
-  color: #94a3b8;
+  color: #cbd5e1;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
@@ -558,7 +558,7 @@ h2 {
 .track-card-info p {
   margin: 0;
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: #cbd5e1;
 }
 
 /* Master Accordion (Read More) */
@@ -570,7 +570,7 @@ h2 {
 
 .seo-master-summary {
   cursor: pointer;
-  color: #94a3b8;
+  color: #cbd5e1;
   text-align: center;
   font-size: 0.9rem;
   padding: 0.5rem;
@@ -612,7 +612,7 @@ h2 {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  color: #94a3b8;
+  color: #cbd5e1;
   font-size: 0.95rem;
   line-height: 1.7;
   text-align: left;
@@ -722,7 +722,7 @@ h2 {
 
 .seo-accordion summary::after {
   content: "+";
-  color: #94a3b8;
+  color: #cbd5e1;
   font-size: 1.5rem;
   line-height: 1;
   transition: transform 0.3s ease;
