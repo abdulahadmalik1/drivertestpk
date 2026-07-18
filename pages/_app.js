@@ -1,7 +1,7 @@
 import '../styles/globals.css';
 import '../styles/App.css';
 import { createContext, useContext, useState } from 'react';
-import { Analytics } from '@vercel/analytics/next';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 // ── Shared language context ──────────────────────────────────────────────────
 export const LangContext = createContext({
@@ -21,8 +21,8 @@ export default function App({ Component, pageProps }) {
 
   return (
     <LangContext.Provider value={{ menuLang, setMenuLang, language, setLanguage }}>
+      <GoogleAnalytics gaId="G-QD258L1BV5" />
       <Component {...pageProps} />
-      <Analytics />
     </LangContext.Provider>
   );
 }
