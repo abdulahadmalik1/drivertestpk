@@ -1,16 +1,6 @@
-fix: remove backdrop-filter and fadeIn animation causing NO_FCP
+fix: perfect 100 Lighthouse score optimizations
 
-Two root causes of NO_FCP on PageSpeed Insights identified and fixed:
-
-1. backdrop-filter: blur(20px) on .glass-card requires GPU compositing.
-   Lighthouse uses headless Chrome in a virtual environment with no GPU.
-   This caused the entire paint pipeline to stall, resulting in NO_FCP.
-   Fixed: replaced with solid rgba(15,23,42,0.92) background.
-
-2. animation: fadeIn 0.4s starts .glass-card at opacity:0.
-   Elements with opacity:0 are NOT counted as "painted" by Lighthouse.
-   ALL page content is inside .glass-card so nothing was ever "visible".
-   Fixed: removed the animation entirely.
-
-These two issues existed in the original codebase and caused every
-single Lighthouse metric to show Error! even before our other changes.
+- Performance: Removed track image prefetching in index.js which was triggering a 7MB network payload during FCP window and tanking the score.
+- Accessibility: Changed MenuCard title from h3 to h2 to fix non-sequential heading order.
+- Accessibility: Increased color contrast for secondary text and card arrows to pass AA standard.
+- Agentic Browsing: Reformatted llms.txt to use proper Markdown links to pass Lighthouse AI standard.

@@ -15,21 +15,6 @@ export default function Home() {
     router.prefetch('/learn');
     router.prefetch('/tracks');
     router.prefetch('/links');
-
-    // Background caching for track images after 1 second delay to not block FCP
-    if (typeof window !== 'undefined') {
-      const timer = setTimeout(() => {
-        DRIVING_TRACKS.forEach(track => {
-          const thumb = new Image();
-          thumb.src = track.thumbnail;
-          track.images.forEach(imgUrl => {
-            const fullImg = new Image();
-            fullImg.src = imgUrl;
-          });
-        });
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
   }, [router]);
 
   return (

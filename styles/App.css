@@ -63,7 +63,7 @@
   --primary-hover: #818cf8;
   --correct-color: #10b981;
   --wrong-color: #ef4444;
-  --text-secondary: #94a3b8;
+  --text-secondary: #cbd5e1; /* Increased contrast from #94a3b8 */
   --font-urdu: 'Noto Nastaliq Urdu', 'Arial', sans-serif;
 }
 
@@ -183,7 +183,7 @@ h2 {
   flex: 1;
 }
 
-.card-text h3 {
+.card-text h2 {
   font-size: 1.05rem;
   font-weight: 600;
   color: #f1f5f9;
@@ -193,20 +193,20 @@ h2 {
 
 .card-text p {
   font-size: 0.8rem;
-  color: #94a3b8;
-  margin: 3px 0 0 0;
+  color: var(--text-secondary); /* Uses new high contrast color */
+  margin: 3px 0 0;
   text-align: left;
 }
 
 .card-arrow {
   font-size: 1.2rem;
-  color: #475569;
+  color: #94a3b8; /* Increased contrast from #475569 */
   transition: transform 0.2s ease;
 }
 
 .menu-card:hover .card-arrow {
   transform: translateX(4px);
-  color: #94a3b8;
+  color: #f1f5f9; /* Increased contrast on hover */
 }
 
 
