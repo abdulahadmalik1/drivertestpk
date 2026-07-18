@@ -58,6 +58,16 @@
   }
 }
 
+/* CSS custom properties — referenced throughout */
+:root {
+  --primary-color: #6366f1;
+  --primary-hover: #818cf8;
+  --correct-color: #10b981;
+  --wrong-color: #ef4444;
+  --text-secondary: #94a3b8;
+  --font-urdu: 'Noto Nastaliq Urdu', 'Arial', sans-serif;
+}
+
 /* Typography */
 h1 {
   font-size: 1.75rem;
@@ -78,7 +88,7 @@ h2 {
 
 .subtitle {
   font-size: 0.95rem;
-  color: #64748b;
+  color: #94a3b8;
   text-align: center;
   margin-bottom: 2rem;
   line-height: 1.5;
@@ -102,11 +112,12 @@ h2 {
   border: none;
   border-radius: 10px;
   background: transparent;
-  color: #64748b;
+  color: #94a3b8;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
+  min-height: 44px;
 }
 
 .toggle-btn.active {
@@ -135,6 +146,8 @@ h2 {
   text-align: left;
   width: 100%;
   background: rgba(255, 255, 255, 0.03);
+  min-height: 44px;
+  will-change: transform;
 }
 
 .menu-card.primary {
@@ -181,7 +194,7 @@ h2 {
 
 .card-text p {
   font-size: 0.8rem;
-  color: #64748b;
+  color: #94a3b8;
   margin: 3px 0 0 0;
   text-align: left;
 }
@@ -296,8 +309,9 @@ h2 {
   justify-content: center;
   color: #e2e8f0;
   font-size: 0.95rem;
-  min-height: 50px;
+  min-height: 54px;
   text-align: center;
+  will-change: transform;
 }
 
 .option-btn.urdu {
@@ -359,7 +373,7 @@ h2 {
   background: var(--primary-color);
   color: white;
   border: none;
-  padding: 0.5rem 2rem;
+  padding: 0.75rem 2rem;
   font-size: 0.95rem;
   font-weight: 500;
   border-radius: 8px;
@@ -367,6 +381,7 @@ h2 {
   transition: background 0.2s ease;
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
   line-height: 1;
+  min-height: 44px;
 }
 
 .next-btn:hover {
@@ -381,7 +396,7 @@ h2 {
   background: rgba(239, 68, 68, 0.08);
   color: #f87171;
   border: 1px solid rgba(239, 68, 68, 0.2);
-  padding: 0.5rem 1.25rem;
+  padding: 0.75rem 1.25rem;
   font-size: 0.9rem;
   font-weight: 500;
   border-radius: 8px;
@@ -389,6 +404,7 @@ h2 {
   transition: all 0.2s ease;
   white-space: nowrap;
   line-height: 1;
+  min-height: 44px;
 }
 
 .quit-btn:hover {
@@ -440,6 +456,8 @@ h2 {
   justify-content: center;
   aspect-ratio: 1;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 80px;
+  will-change: transform;
 }
 
 .gallery-item:hover {

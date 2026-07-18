@@ -1,0 +1,41 @@
+# Pakistan Driving License Test — Free Traffic Signs Quiz
+# https://drivetestpk.com
+
+> Free Pakistan driving license test practice — 100+ traffic signs quiz in English & Urdu. L-shape and S-shape driving track guide, DLIMS Punjab, Sindh & Islamabad portals.
+
+## About
+
+drivetestpk.com is a free educational web application helping Pakistani citizens prepare for their driving license test. The app provides:
+
+- Interactive traffic sign quiz (10, 30, or 50 questions) in English and Urdu
+- Complete gallery of 100+ Pakistan traffic signs with English and Urdu names
+- Step-by-step visual guide for L-Shape and S-Shape practical driving tracks
+- Direct links to official DLIMS Punjab, DLS Sindh, and ITP Islamabad portals
+
+## Pages
+
+- Home: https://drivetestpk.com/ — Main navigation hub
+- Quiz: https://drivetestpk.com/quiz — Practice traffic sign quiz
+- Learn Signs: https://drivetestpk.com/learn — Traffic sign gallery and guide
+- Driving Tracks: https://drivetestpk.com/tracks — L-Shape and S-Shape track photos
+- Helpful Links: https://drivetestpk.com/links — Official government license portals
+
+## Key Facts
+
+- Language support: English and Urdu (اردو)
+- Quiz modes: Short (10 questions), Medium (30 questions), Long (50 questions)
+- All content is freely accessible — no login or payment required
+- Target audience: Pakistan driving license applicants (Punjab, Sindh, Islamabad)
+- Official DLIMS portals covered: Punjab (dlims.punjab.gov.pk), Sindh (dlsonline.sindhpolice.gov.pk), Islamabad (dlims.islamabadpolice.gov.pk)
+
+## Structured Data
+
+This site implements schema.org structured data including:
+- WebApplication
+- FAQPage
+- BreadcrumbList
+- WebPage
+
+## Contact
+
+Website: https://drivetestpk.com

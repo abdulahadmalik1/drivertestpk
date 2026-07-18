@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState, useCallback, useMemo, useEffect } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import { useRouter } from 'next/router';
 import { useLang } from './_app';
 import { QUIZ_MODES, shuffleArray, getOptionStatus, MenuCard } from '../lib/constants';
@@ -78,7 +78,7 @@ const faqSchema = {
   ]
 };
 
-const seoHead = (
+const SeoHead = () => (
   <Head>
     <title>Pakistan Driving Test Quiz | Practice Traffic Signs Online</title>
     <meta name="description" content="Take our free online traffic sign quiz to prepare for the Pakistan driving license test. Practice multiple-choice questions in English and Urdu." />
@@ -89,336 +89,310 @@ const seoHead = (
   </Head>
 );
 
-const seoContent = (
+const SeoContent = () => (
   <details className="seo-master-accordion">
-    <summary className="seo-master-summary">Read FAQs & Guide</summary>
+    <summary className="seo-master-summary">Read FAQs &amp; Guide</summary>
     <div className="seo-content-wrapper">
-    <article className="seo-content">
-      <h1>Pakistan Driving License Traffic Sign Quiz (پاکستان ڈرائیونگ لائسنس ٹریفک سائن کوئز)</h1>
-      <p>Passing the computerized traffic sign test (e-sign test) is your first major hurdle in getting a driving license. This mock simulator tests your knowledge of all official traffic signs to ensure you are fully prepared for the real exam.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">کمپیوٹرائزڈ ٹریفک سائن ٹیسٹ (ای سائن ٹیسٹ) پاس کرنا ڈرائیونگ لائسنس کے حصول میں آپ کی پہلی بڑی رکاوٹ ہے۔ یہ ماک سمیلیٹر آپ کے علم کی جانچ کرتا ہے تاکہ یہ یقینی بنایا جا سکے کہ آپ اصل امتحان کے لیے پوری طرح تیار ہیں۔</span></p>
-      
-      <div className="seo-accordion-container">
-        <details className="seo-accordion">
-          <summary>What do the different shapes of traffic signs mean? (ٹریفک نشانات کی مختلف اشکال کا کیا مطلب ہے؟)</summary>
-          <div className="accordion-content">
-             <p>In Pakistan&apos;s traffic sign test, shapes are critical: circles mean mandatory orders (you must do it), triangles are warning signs (danger ahead), and rectangles provide information or guidance.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">پاکستان کے ٹریفک سائن ٹیسٹ میں، شکلیں بہت اہم ہیں: دائروں کا مطلب لازمی احکامات ہیں، تکون انتباہی نشانات ہیں (آگے خطرہ ہے)، اور مستطیل معلومات یا رہنمائی فراہم کرتے ہیں۔</span></p>
-          </div>
-        </details>
+      <article className="seo-content">
+        <h2>Pakistan Driving License Traffic Sign Quiz (پاکستان ڈرائیونگ لائسنس ٹریفک سائن کوئز)</h2>
+        <p>Passing the computerized traffic sign test (e-sign test) is your first major hurdle in getting a driving license. This mock simulator tests your knowledge of all official traffic signs to ensure you are fully prepared for the real exam.<br /><br /><span style={{ fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem' }} dir="rtl">کمپیوٹرائزڈ ٹریفک سائن ٹیسٹ (ای سائن ٹیسٹ) پاس کرنا ڈرائیونگ لائسنس کے حصول میں آپ کی پہلی بڑی رکاوٹ ہے۔</span></p>
 
-        <details className="seo-accordion">
-          <summary>What do the different colors on traffic signs signify? (ٹریفک نشانات پر مختلف رنگ کیا ظاہر کرتے ہیں؟)</summary>
-          <div className="accordion-content">
-            <p>Red usually signifies a prohibition or danger. Blue circles indicate a mandatory positive instruction (like &quot;Turn Left Ahead&quot;). Green or blue rectangles are used for directions and information.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">سرخ رنگ عام طور پر ممانعت یا خطرے کو ظاہر کرتا ہے۔ نیلے دائرے لازمی مثبت ہدایت کی نشاندہی کرتے ہیں (جیسے &quot;آگے سے بائیں مڑیں&quot;)۔ سبز یا نیلے مستطیل سمتوں اور معلومات کے لیے استعمال ہوتے ہیں۔</span></p>
-          </div>
-        </details>
-        
-        <details className="seo-accordion">
-          <summary>Which traffic signs are most commonly failed in the test? (ٹیسٹ میں کون سے ٹریفک نشانات میں سب سے زیادہ فیل ہوتے ہیں؟)</summary>
-          <div className="accordion-content">
-            <p>Candidates frequently confuse &quot;No Stopping&quot; and &quot;No Parking&quot; signs, as well as the &quot;Give Way&quot; and &quot;Stop&quot; signs. Make sure to study the subtle differences in our <Link href="/learn">sign gallery</Link> before taking the quiz.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">امیدوار اکثر &quot;نو سٹاپنگ&quot; اور &quot;نو پارکنگ&quot; کے نشانات، نیز &quot;راستہ دیں&quot; اور &quot;رکیں&quot; کے نشانات میں الجھ جاتے ہیں۔ کوئز دینے سے پہلے ہماری سائن گیلری میں ان کے باریک فرق کا مطالعہ ضرور کریں۔</span></p>
-          </div>
-        </details>
+        <div className="seo-accordion-container">
+          <details className="seo-accordion">
+            <summary>What do the different shapes of traffic signs mean? (ٹریفک نشانات کی مختلف اشکال کا کیا مطلب ہے؟)</summary>
+            <div className="accordion-content">
+              <p>In Pakistan&apos;s traffic sign test, shapes are critical: circles mean mandatory orders (you must do it), triangles are warning signs (danger ahead), and rectangles provide information or guidance.<br /><br /><span style={{ fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem' }} dir="rtl">پاکستان کے ٹریفک سائن ٹیسٹ میں، شکلیں بہت اہم ہیں: دائروں کا مطلب لازمی احکامات ہیں، تکون انتباہی نشانات ہیں، اور مستطیل معلومات یا رہنمائی فراہم کرتے ہیں۔</span></p>
+            </div>
+          </details>
 
-        <details className="seo-accordion">
-          <summary>Do I need to memorize the Urdu names of the signs? (کیا مجھے نشانات کے اردو نام یاد کرنے کی ضرورت ہے؟)</summary>
-          <div className="accordion-content">
-            <p>While you can choose to take the computerized test in English, knowing the Urdu terminology is highly recommended as the official test often displays both languages.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">اگرچہ آپ انگریزی میں کمپیوٹرائزڈ ٹیسٹ دینے کا انتخاب کر سکتے ہیں، لیکن اردو اصطلاحات جاننے کی انتہائی سفارش کی جاتی ہے کیونکہ سرکاری ٹیسٹ میں اکثر دونوں زبانیں دکھائی جاتی ہیں۔</span></p>
-          </div>
-        </details>
+          <details className="seo-accordion">
+            <summary>What do the different colors on traffic signs signify? (ٹریفک نشانات پر مختلف رنگ کیا ظاہر کرتے ہیں؟)</summary>
+            <div className="accordion-content">
+              <p>Red usually signifies a prohibition or danger. Blue circles indicate a mandatory positive instruction (like &quot;Turn Left Ahead&quot;). Green or blue rectangles are used for directions and information.<br /><br /><span style={{ fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem' }} dir="rtl">سرخ رنگ عام طور پر ممانعت یا خطرے کو ظاہر کرتا ہے۔ نیلے دائرے لازمی مثبت ہدایت کی نشاندہی کرتے ہیں۔ سبز یا نیلے مستطیل سمتوں اور معلومات کے لیے استعمال ہوتے ہیں۔</span></p>
+            </div>
+          </details>
 
-        <details className="seo-accordion">
-          <summary>How many traffic sign questions are asked in the driving test? (ڈرائیونگ ٹیسٹ میں ٹریفک نشانات کے کتنے سوالات پوچھے جاتے ہیں؟)</summary>
-          <div className="accordion-content">
-            <p>The computerized e-sign test typically consists of 10 to 20 multiple-choice questions depending on your province (DLIMS Punjab, Sindh, or ITP). You must score at least 50% to pass.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">صوبے کے لحاظ سے کمپیوٹرائزڈ ای سائن ٹیسٹ عام طور پر 10 سے 20 سوالات پر مشتمل ہوتا ہے۔ پاس ہونے کے لیے آپ کو کم از کم 50% سکور کرنا ہوگا۔</span></p>
-          </div>
-        </details>
-        
-        <details className="seo-accordion">
-          <summary>Is the traffic sign test computerized? (کیا ٹریفک سائن ٹیسٹ کمپیوٹرائزڈ ہے؟)</summary>
-          <div className="accordion-content">
-            <p>Yes, across major testing centers in Pakistan, the traffic sign test has been completely digitized into an &quot;e-sign test&quot; using touch-screen computers.<br/><br/><span style={{fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem'}} dir="rtl">جی ہاں، پاکستان کے بڑے ٹیسٹنگ مراکز میں، ٹریفک سائن ٹیسٹ کو ٹچ سکرین کمپیوٹرز کا استعمال کرتے ہوئے مکمل طور پر &quot;ای سائن ٹیسٹ&quot; میں ڈیجیٹائز کر دیا گیا ہے۔</span></p>
-          </div>
-        </details>
-      </div>
-    </article>
+          <details className="seo-accordion">
+            <summary>Which traffic signs are most commonly failed in the test? (ٹیسٹ میں کون سے ٹریفک نشانات میں سب سے زیادہ فیل ہوتے ہیں؟)</summary>
+            <div className="accordion-content">
+              <p>Candidates frequently confuse &quot;No Stopping&quot; and &quot;No Parking&quot; signs, as well as the &quot;Give Way&quot; and &quot;Stop&quot; signs. Make sure to study the subtle differences in our <Link href="/learn">sign gallery</Link> before taking the quiz.<br /><br /><span style={{ fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem' }} dir="rtl">امیدوار اکثر &quot;نو سٹاپنگ&quot; اور &quot;نو پارکنگ&quot; کے نشانات میں الجھ جاتے ہیں۔</span></p>
+            </div>
+          </details>
+
+          <details className="seo-accordion">
+            <summary>Do I need to memorize the Urdu names of the signs? (کیا مجھے نشانات کے اردو نام یاد کرنے کی ضرورت ہے؟)</summary>
+            <div className="accordion-content">
+              <p>While you can choose to take the computerized test in English, knowing the Urdu terminology is highly recommended as the official test often displays both languages.<br /><br /><span style={{ fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem' }} dir="rtl">اگرچہ آپ انگریزی میں ٹیسٹ دینے کا انتخاب کر سکتے ہیں، لیکن اردو اصطلاحات جاننے کی انتہائی سفارش کی جاتی ہے۔</span></p>
+            </div>
+          </details>
+
+          <details className="seo-accordion">
+            <summary>How many traffic sign questions are asked in the driving test? (ڈرائیونگ ٹیسٹ میں کتنے سوالات پوچھے جاتے ہیں؟)</summary>
+            <div className="accordion-content">
+              <p>The computerized e-sign test typically consists of 10 to 20 multiple-choice questions depending on your province (DLIMS Punjab, Sindh, or ITP). You must score at least 50% to pass.<br /><br /><span style={{ fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem' }} dir="rtl">صوبے کے لحاظ سے کمپیوٹرائزڈ ای سائن ٹیسٹ عام طور پر 10 سے 20 سوالات پر مشتمل ہوتا ہے۔</span></p>
+            </div>
+          </details>
+
+          <details className="seo-accordion">
+            <summary>Is the traffic sign test computerized? (کیا ٹریفک سائن ٹیسٹ کمپیوٹرائزڈ ہے؟)</summary>
+            <div className="accordion-content">
+              <p>Yes, across major testing centers in Pakistan, the traffic sign test has been completely digitized into an &quot;e-sign test&quot; using touch-screen computers.<br /><br /><span style={{ fontFamily: 'Noto Nastaliq Urdu, Arial', fontSize: '0.95rem' }} dir="rtl">جی ہاں، پاکستان کے بڑے ٹیسٹنگ مراکز میں، ٹریفک سائن ٹیسٹ کو مکمل طور پر &quot;ای سائن ٹیسٹ&quot; میں ڈیجیٹائز کر دیا گیا ہے۔</span></p>
+            </div>
+          </details>
+        </div>
+      </article>
     </div>
   </details>
 );
 
 export default function QuizPage({ quizData }) {
-    const router = useRouter();
-    const { menuLang } = useLang();
-    const isMenuUrdu = menuLang === 'urdu';
+  const router = useRouter();
+  const { menuLang } = useLang();
+  const isMenuUrdu = menuLang === 'urdu';
 
-    const [screen, setScreen] = useState('picker'); // picker | preloading | quiz | result
-    const [loadProgress, setLoadProgress] = useState({ done: 0, total: 0 });
-    const [language, setLanguage] = useState('english');
-    const [questions, setQuestions] = useState([]);
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [selectedOption, setSelectedOption] = useState(null);
-    const [isAnswerChecked, setIsAnswerChecked] = useState(false);
-    const [score, setScore] = useState(0);
+  // Removed preloading screen — renders immediately for fast FCP
+  const [screen, setScreen] = useState('picker'); // picker | quiz | result
+  const [language, setLanguage] = useState('english');
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [isAnswerChecked, setIsAnswerChecked] = useState(false);
+  const [score, setScore] = useState(0);
 
-    const isUrdu = language === 'urdu';
+  const isUrdu = language === 'urdu';
 
-    useEffect(() => {
-        if (screen === 'preloading' && questions.length > 0) {
-            const imagesToLoad = new Set();
-            questions.forEach(q => {
-                if (q.image) imagesToLoad.add(q.image);
-                q.options?.forEach(opt => {
-                    if (opt.image) imagesToLoad.add(opt.image);
-                });
-            });
+  const startQuiz = useCallback((lang, count) => {
+    const selected = shuffleArray(quizData[lang]).slice(0, count);
+    setLanguage(lang);
+    setQuestions(selected);
+    setCurrentQuestionIndex(0);
+    setScore(0);
+    setSelectedOption(null);
+    setIsAnswerChecked(false);
+    setScreen('quiz');
+  }, [quizData]);
 
-            const total = imagesToLoad.size;
-            if (total === 0) {
-                setScreen('quiz');
-                return;
-            }
-
-            let done = 0;
-            setLoadProgress({ done: 0, total });
-
-            Promise.all(Array.from(imagesToLoad).map(src => new Promise(resolve => {
-                const img = new window.Image();
-                img.onload = img.onerror = () => {
-                    setLoadProgress({ done: ++done, total });
-                    resolve();
-                };
-                img.src = src;
-            }))).then(() => {
-                setScreen('quiz');
-            });
-        }
-    }, [screen, questions]);
-
-    const startQuiz = useCallback((lang, count) => {
-        const selected = shuffleArray(quizData[lang]).slice(0, count);
-        setLanguage(lang);
-        setQuestions(selected);
-        setCurrentQuestionIndex(0);
-        setScore(0);
-        setSelectedOption(null);
-        setIsAnswerChecked(false);
-        setScreen('preloading');
-    }, [quizData]);
-
-    const handleOptionClick = useCallback((optionId) => {
-        if (isAnswerChecked) return;
-        setSelectedOption(optionId);
-        setIsAnswerChecked(true);
-        if (optionId === questions[currentQuestionIndex].correctAnswer) {
-            setScore(prev => prev + 1);
-        }
-    }, [isAnswerChecked, questions, currentQuestionIndex]);
-
-    const handleNext = useCallback(() => {
-        if (currentQuestionIndex + 1 < questions.length) {
-            setCurrentQuestionIndex(prev => prev + 1);
-            setIsAnswerChecked(false);
-            setSelectedOption(null);
-        } else {
-            setScreen('result');
-        }
-    }, [currentQuestionIndex, questions.length]);
-
-    const quizModes = useMemo(() => QUIZ_MODES.map(m => ({
-        ...m,
-        label: isMenuUrdu ? { short: 'مختصر', medium: 'معیاری', long: 'طویل' }[m.key] : m.key.charAt(0).toUpperCase() + m.key.slice(1),
-        sub: isMenuUrdu ? `${m.count} سوالات` : `${m.count} Questions`,
-    })), [isMenuUrdu]);
-
-    // ── Quiz Picker ──
-    if (screen === 'picker') {
-        return (
-            <>
-                {seoHead}
-                <div className="app-container">
-                    <div className="glass-card splash-card">
-                        <h1>{isMenuUrdu ? 'مشکل منتخب کریں' : 'Choose Quiz Length'}</h1>
-                        <p className="subtitle">
-                            {isMenuUrdu ? 'اپنی پسند کا ٹیسٹ چنیں' : 'Pick how many questions you want'}
-                        </p>
-                        <div className="action-menu" style={{ gap: '0.75rem' }}>
-                            {quizModes.map(m => (
-                                <MenuCard
-                                    key={m.count}
-                                    icon={m.icon}
-                                    title={m.label}
-                                    subtitle={m.sub}
-                                    style={{ background: m.color, borderColor: m.border }}
-                                    onClick={() => startQuiz(menuLang, m.count)}
-                                />
-                            ))}
-                        </div>
-                        <button className="quit-btn" style={{ marginTop: '1.25rem' }} onClick={() => router.push('/')}>
-                            {isMenuUrdu ? '← واپس' : '← Back'}
-                        </button>
-                    </div>
-                    {seoContent}
-                </div>
-            </>
-        );
+  const handleOptionClick = useCallback((optionId) => {
+    if (isAnswerChecked) return;
+    setSelectedOption(optionId);
+    setIsAnswerChecked(true);
+    if (optionId === questions[currentQuestionIndex].correctAnswer) {
+      setScore(prev => prev + 1);
     }
+  }, [isAnswerChecked, questions, currentQuestionIndex]);
 
-    // ── Preloading Screen ──
-    if (screen === 'preloading') {
-        const pct = loadProgress.total > 0 ? Math.round((loadProgress.done / loadProgress.total) * 100) : 0;
-        return (
-            <>
-                {seoHead}
-                <div className="app-container">
-                    <div className="glass-card splash-card" style={{ gap: '1rem', alignItems: 'center', justifyContent: 'center' }}>
-                        <div style={{
-                            width: '40px', height: '40px', borderRadius: '50%',
-                            border: '3px solid rgba(255,255,255,0.08)',
-                            borderTop: '3px solid var(--primary-color)',
-                            animation: 'spin 0.8s linear infinite',
-                        }} />
-                        <div style={{ width: '180px', background: 'rgba(255,255,255,0.06)', borderRadius: '999px', height: '3px', overflow: 'hidden' }}>
-                            <div style={{
-                                height: '100%', width: `${pct}%`,
-                                background: 'var(--primary-color)',
-                                borderRadius: '999px',
-                                transition: 'width 0.2s ease',
-                            }} />
-                        </div>
-                        <div style={{color: 'var(--text-secondary)', fontSize: '0.875rem', marginTop: '0.5rem'}}>
-                            {isUrdu ? 'سوالات لوڈ ہو رہے ہیں...' : 'Loading quiz...'} {pct}%
-                        </div>
-                    </div>
-                    {seoContent}
-                </div>
-            </>
-        );
+  const handleNext = useCallback(() => {
+    if (currentQuestionIndex + 1 < questions.length) {
+      setCurrentQuestionIndex(prev => prev + 1);
+      setIsAnswerChecked(false);
+      setSelectedOption(null);
+    } else {
+      setScreen('result');
     }
+  }, [currentQuestionIndex, questions.length]);
 
-    // ── Result screen ──
-    if (screen === 'result') {
-        const percentage = Math.round((score / questions.length) * 100);
-        let message;
-        if (isUrdu) {
-            if (percentage > 80) message = 'بہترین! آپ کی تیاری بہت اچھی ہے۔';
-            else if (percentage > 50) message = 'اچھی کوشش، مزید پریکٹس جاری رکھیں۔';
-            else message = 'جاری رکھیں! مزید محنت کی ضرورت ہے۔';
-        } else {
-            if (percentage > 80) message = 'Excellent Driving Knowledge!';
-            else if (percentage > 50) message = 'Good effort, keep practicing.';
-            else message = 'Keep learning!';
-        }
-        return (
-            <>
-                <Head>
-                    <title>Quiz Result — Pakistan Driving Test</title>
-                    <link rel="canonical" href="https://drivetestpk.com/quiz" />
-                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-                    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-                </Head>
-                <div className="app-container">
-                    <div className="glass-card results-container">
-                        <h1>Quiz Completed!</h1>
-                        <div className="score-display">{percentage}%</div>
-                        <div className="message">
-                            {isUrdu ? 'آپ کا سکور:' : 'Your Score:'} {score} / {questions.length}
-                            <br />
-                            {message}
-                        </div>
-                        <button className="next-btn" onClick={() => router.push('/')}>
-                            {isUrdu ? 'دوبارہ شروع کریں' : 'Back to Menu'}
-                        </button>
-                    </div>
-                    {seoContent}
-                </div>
-            </>
-        );
-    }
+  const quizModes = useMemo(() => QUIZ_MODES.map(m => ({
+    ...m,
+    label: isMenuUrdu ? { short: 'مختصر', medium: 'معیاری', long: 'طویل' }[m.key] : m.key.charAt(0).toUpperCase() + m.key.slice(1),
+    sub: isMenuUrdu ? `${m.count} سوالات` : `${m.count} Questions`,
+  })), [isMenuUrdu]);
 
-    // ── Active Quiz ──
-    const currentQuestion = questions[currentQuestionIndex];
-    const nextQuestion = questions[currentQuestionIndex + 1];
-    if (!currentQuestion) return null;
-    const hasImageOptions = currentQuestion.options.some(opt => opt.image);
-
+  // ── Quiz Picker ──
+  if (screen === 'picker') {
     return (
-        <>
-            <Head>
-                <title>Question {currentQuestionIndex + 1} — Pakistan Driving Test</title>
-                <link rel="canonical" href="https://drivetestpk.com/quiz" />
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-                <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-            </Head>
-            {/* Hidden Preload for Next Question */}
-            {nextQuestion && (
-                <div style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', opacity: 0, pointerEvents: 'none' }}>
-                    {nextQuestion.image && <Image src={nextQuestion.image} alt="preload" width={400} height={180} priority />}
-                    {nextQuestion.options?.map(opt => opt.image && <Image key={`preload-${opt.id}`} src={opt.image} alt="preload" width={200} height={100} priority />)}
-                </div>
-            )}
-            <div className="app-container">
-                <div className="glass-card quiz-card">
-                    <div className="quiz-header">
-                        <div className="header-info">
-                            <span>{isUrdu ? 'سوال' : 'Question'} {currentQuestionIndex + 1} / {questions.length}</span>
-                            <span>{isUrdu ? 'سکور' : 'Score'}: {score}</span>
-                        </div>
-                        <div className="progress-bar">
-                            <div className="progress-fill" style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }} />
-                        </div>
-                    </div>
-
-                    <div className="question-area">
-                        {currentQuestion.image && (
-                            <div className="main-image-container">
-                                <Image key={currentQuestion.image} src={currentQuestion.image} alt="Question Sign" width={400} height={180} className="question-image" priority style={{ objectFit: 'contain' }} />
-                            </div>
-                        )}
-                        <h2 className={`question-text ${isUrdu ? 'urdu' : ''}`}>{currentQuestion.question}</h2>
-                    </div>
-
-                    <div className={`options-grid ${!hasImageOptions ? 'text-only' : ''}`}>
-                        {currentQuestion.options.map(opt => {
-                            if (!opt.text && !opt.image) return null;
-                            const statusClass = getOptionStatus(opt, isAnswerChecked, selectedOption, currentQuestion.correctAnswer);
-                            return (
-                                <button
-                                    key={opt.id}
-                                    className={`option-btn ${statusClass} ${isUrdu ? 'urdu' : ''}`}
-                                    onClick={() => handleOptionClick(opt.id)}
-                                    disabled={isAnswerChecked}
-                                >
-                                    {opt.image
-                                        ? <Image key={opt.image} src={opt.image} alt={`Option ${opt.id}`} width={200} height={100} className="option-image" priority style={{ objectFit: 'contain' }} />
-                                        : <span>{opt.text}</span>
-                                    }
-                                </button>
-                            );
-                        })}
-                    </div>
-
-                    <div className="quiz-footer" style={{ justifyContent: 'space-between', width: '100%', gap: '0.75rem' }}>
-                        <button className="quit-btn" onClick={() => router.push('/')}>
-                            {isUrdu ? 'چھوڑیں' : 'Quit'}
-                        </button>
-                        {isAnswerChecked && (
-                            <button className="next-btn" onClick={handleNext}>
-                                {isUrdu ? 'اگلا سوال' : 'Next Question'}
-                            </button>
-                        )}
-                    </div>
-                    </div>
-                    {seoContent}
-                </div>
-            </>
+      <>
+        <SeoHead />
+        <div className="app-container">
+          <main id="main-content" className="glass-card splash-card">
+            <h1>{isMenuUrdu ? 'مشکل منتخب کریں' : 'Choose Quiz Length'}</h1>
+            <p className="subtitle">
+              {isMenuUrdu ? 'اپنی پسند کا ٹیسٹ چنیں' : 'Pick how many questions you want'}
+            </p>
+            <div className="action-menu" style={{ gap: '0.75rem' }} role="list" aria-label={isMenuUrdu ? 'کوئز موڈز' : 'Quiz modes'}>
+              {quizModes.map(m => (
+                <MenuCard
+                  key={m.count}
+                  icon={m.icon}
+                  title={m.label}
+                  subtitle={m.sub}
+                  style={{ background: m.color, borderColor: m.border }}
+                  onClick={() => startQuiz(menuLang, m.count)}
+                />
+              ))}
+            </div>
+            <button
+              className="quit-btn"
+              style={{ marginTop: '1.25rem' }}
+              onClick={() => router.push('/')}
+              aria-label={isMenuUrdu ? 'گھر واپس جائیں' : 'Back to home'}
+            >
+              {isMenuUrdu ? '← واپس' : '← Back'}
+            </button>
+          </main>
+          <SeoContent />
+        </div>
+      </>
     );
+  }
+
+  // ── Result screen ──
+  if (screen === 'result') {
+    const percentage = Math.round((score / questions.length) * 100);
+    let message;
+    if (isUrdu) {
+      if (percentage > 80) message = 'بہترین! آپ کی تیاری بہت اچھی ہے۔';
+      else if (percentage > 50) message = 'اچھی کوشش، مزید پریکٹس جاری رکھیں۔';
+      else message = 'جاری رکھیں! مزید محنت کی ضرورت ہے۔';
+    } else {
+      if (percentage > 80) message = 'Excellent Driving Knowledge!';
+      else if (percentage > 50) message = 'Good effort, keep practicing.';
+      else message = 'Keep learning!';
+    }
+    return (
+      <>
+        <Head>
+          <title>Quiz Result — Pakistan Driving Test</title>
+          <link rel="canonical" href="https://drivetestpk.com/quiz" />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+        </Head>
+        <div className="app-container">
+          <main id="main-content" className="glass-card results-container">
+            <h1>Quiz Completed!</h1>
+            <div className="score-display" aria-label={`Score: ${percentage} percent`}>{percentage}%</div>
+            <div className="message">
+              {isUrdu ? 'آپ کا سکور:' : 'Your Score:'} {score} / {questions.length}
+              <br />
+              {message}
+            </div>
+            <button
+              className="next-btn"
+              onClick={() => router.push('/')}
+              aria-label={isUrdu ? 'مین مینو پر واپس جائیں' : 'Back to main menu'}
+            >
+              {isUrdu ? 'دوبارہ شروع کریں' : 'Back to Menu'}
+            </button>
+          </main>
+          <SeoContent />
+        </div>
+      </>
+    );
+  }
+
+  // ── Active Quiz ──
+  const currentQuestion = questions[currentQuestionIndex];
+  const nextQuestion = questions[currentQuestionIndex + 1];
+  if (!currentQuestion) return null;
+  const hasImageOptions = currentQuestion.options.some(opt => opt.image);
+
+  return (
+    <>
+      <Head>
+        <title>Question {currentQuestionIndex + 1} — Pakistan Driving Test</title>
+        <link rel="canonical" href="https://drivetestpk.com/quiz" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      </Head>
+      {/* Hidden Preload for Next Question */}
+      {nextQuestion && (
+        <div style={{ position: 'absolute', width: 0, height: 0, overflow: 'hidden', opacity: 0, pointerEvents: 'none' }} aria-hidden="true">
+          {nextQuestion.image && <Image src={nextQuestion.image} alt="" width={400} height={180} priority />}
+          {nextQuestion.options?.map(opt => opt.image && <Image key={`preload-${opt.id}`} src={opt.image} alt="" width={200} height={100} priority />)}
+        </div>
+      )}
+      <div className="app-container">
+        <main id="main-content" className="glass-card quiz-card">
+          <div className="quiz-header">
+            <div className="header-info">
+              <span aria-live="polite" aria-atomic="true">{isUrdu ? 'سوال' : 'Question'} {currentQuestionIndex + 1} / {questions.length}</span>
+              <span>{isUrdu ? 'سکور' : 'Score'}: {score}</span>
+            </div>
+            <div className="progress-bar" role="progressbar" aria-valuenow={currentQuestionIndex + 1} aria-valuemin={1} aria-valuemax={questions.length} aria-label={`Question ${currentQuestionIndex + 1} of ${questions.length}`}>
+              <div className="progress-fill" style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }} />
+            </div>
+          </div>
+
+          <div className="question-area">
+            {currentQuestion.image && (
+              <div className="main-image-container">
+                <Image
+                  key={currentQuestion.image}
+                  src={currentQuestion.image}
+                  alt="Traffic sign to identify"
+                  width={400}
+                  height={180}
+                  className="question-image"
+                  priority
+                  style={{ objectFit: 'contain' }}
+                />
+              </div>
+            )}
+            <h2 className={`question-text ${isUrdu ? 'urdu' : ''}`}>{currentQuestion.question}</h2>
+          </div>
+
+          <div
+            className={`options-grid ${!hasImageOptions ? 'text-only' : ''}`}
+            role="group"
+            aria-label={isUrdu ? 'جواب کے اختیارات' : 'Answer options'}
+          >
+            {currentQuestion.options.map(opt => {
+              if (!opt.text && !opt.image) return null;
+              const statusClass = getOptionStatus(opt, isAnswerChecked, selectedOption, currentQuestion.correctAnswer);
+              const isCorrect = isAnswerChecked && opt.id === currentQuestion.correctAnswer;
+              const isWrong = isAnswerChecked && opt.id === selectedOption && opt.id !== currentQuestion.correctAnswer;
+              return (
+                <button
+                  key={opt.id}
+                  className={`option-btn ${statusClass} ${isUrdu ? 'urdu' : ''}`}
+                  onClick={() => handleOptionClick(opt.id)}
+                  disabled={isAnswerChecked}
+                  aria-pressed={selectedOption === opt.id}
+                  aria-label={
+                    opt.image
+                      ? `${isUrdu ? 'اختیار' : 'Option'} ${opt.id}${isCorrect ? (isUrdu ? ' - درست' : ' - Correct') : isWrong ? (isUrdu ? ' - غلط' : ' - Wrong') : ''}`
+                      : `${opt.text}${isCorrect ? (isUrdu ? ' - درست' : ' - Correct') : isWrong ? (isUrdu ? ' - غلط' : ' - Wrong') : ''}`
+                  }
+                >
+                  {opt.image
+                    ? <Image key={opt.image} src={opt.image} alt={`Option ${opt.id}`} width={200} height={100} className="option-image" priority style={{ objectFit: 'contain' }} />
+                    : <span>{opt.text}</span>
+                  }
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="quiz-footer" style={{ justifyContent: 'space-between', width: '100%', gap: '0.75rem' }}>
+            <button
+              className="quit-btn"
+              onClick={() => router.push('/')}
+              aria-label={isUrdu ? 'کوئز چھوڑ کر گھر جائیں' : 'Quit quiz and go home'}
+            >
+              {isUrdu ? 'چھوڑیں' : 'Quit'}
+            </button>
+            {isAnswerChecked && (
+              <button
+                className="next-btn"
+                onClick={handleNext}
+                aria-label={isUrdu ? 'اگلے سوال پر جائیں' : 'Go to next question'}
+              >
+                {isUrdu ? 'اگلا سوال' : 'Next Question'}
+              </button>
+            )}
+          </div>
+        </main>
+        <SeoContent />
+      </div>
+    </>
+  );
 }
 
 export async function getStaticProps() {
-    const fs = require('fs');
-    const path = require('path');
-    const dataPath = path.join(process.cwd(), 'public', 'quiz_data.json');
-    const quizData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
-    return {
-        props: { quizData }
-    };
+  const fs = require('fs');
+  const path = require('path');
+  const dataPath = path.join(process.cwd(), 'public', 'quiz_data.json');
+  const quizData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
+  return {
+    props: { quizData }
+  };
 }

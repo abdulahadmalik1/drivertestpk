@@ -18,3 +18,48 @@ body {
 #__next {
   min-height: 100vh;
 }
+
+/* ── Accessibility: Focus Visible ─────────────────────────────────────────── */
+/* Default: remove outline (we use custom focus-visible styles) */
+:focus {
+  outline: none;
+}
+
+/* Show clear focus ring when navigating via keyboard */
+:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip to main content link for keyboard users */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: #6366f1;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  z-index: 9999;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  top: 0;
+}
+
+/* ── Reduced Motion ───────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

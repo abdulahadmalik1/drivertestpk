@@ -115,10 +115,6 @@ export default function Document() {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
         <link rel="manifest" href="/manifest.json?v=2" />
 
-        {/* Preconnect for faster font/resource loading */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-
         {/* JSON-LD Structured Data — key for rich results and fast ranking */}
         <script
           type="application/ld+json"

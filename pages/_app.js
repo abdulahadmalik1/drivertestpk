@@ -21,6 +21,10 @@ export default function App({ Component, pageProps }) {
 
   return (
     <LangContext.Provider value={{ menuLang, setMenuLang, language, setLanguage }}>
+      {/* Skip link for keyboard/screen reader navigation */}
+      <a href="#main-content" className="skip-link">
+        Skip to main content
+      </a>
       <GoogleAnalytics gaId="G-QD258L1BV5" />
       <Component {...pageProps} />
     </LangContext.Provider>
