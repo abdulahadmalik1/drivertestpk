@@ -59,8 +59,8 @@
 
 /* CSS custom properties — referenced throughout */
 :root {
-  --primary-color: #6366f1;
-  --primary-hover: #818cf8;
+  --primary-color: #4f46e5;
+  --primary-hover: #4338ca;
   --correct-color: #10b981;
   --wrong-color: #ef4444;
   --text-secondary: #cbd5e1; /* Increased contrast from #94a3b8 */

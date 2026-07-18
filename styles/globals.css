@@ -27,7 +27,7 @@ body {
 
 /* Show clear focus ring when navigating via keyboard */
 :focus-visible {
-  outline: 2px solid #6366f1;
+  outline: 2px solid #4f46e5;
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -37,7 +37,7 @@ body {
   position: absolute;
   top: -100%;
   left: 0;
-  background: #6366f1;
+  background: #4f46e5;
   color: #fff;
   padding: 0.75rem 1.5rem;
   z-index: 9999;
